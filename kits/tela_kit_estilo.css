@@ -1,0 +1,69 @@
+/*@import url('https://fonts.googleapis.com/css2? family= Montserrat:wght@200 & display=swap');*/
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+}
+.titulo_kits{
+    text-align: left;
+    padding-top: 30px;
+    font-size: 30px;
+    width: auto;
+    margin-left: 800px;
+    color: black;
+}
+.area_tab_kits{
+    height: 100%;
+    width: 100%;
+    margin-left: 280px;
+    border-radius: 20px;
+}
+.titulos_area_kits{
+    position: absolute;
+    left: 15%;
+    margin: 15px;
+    padding: 5px;
+    font-size: 35px;
+}
+.titulo_categoria, .titulo_descricao, .titulo_quantidade{
+    border-radius: 0px;
+    border-bottom: 3px solid #12FF72;
+    color: black;
+    font-size: 25px;
+    /*li*/
+    margin-left: 120px;
+}
+.nav-kits{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    width: 100%;
+}
+.icon-kits{
+    
+}
+.area_lateral_kits{
+    position: absolute;
+    left: 30%;
+    margin: 15px;
+    padding: 5px;
+    font-size: 35px;
+    margin-left: 900px;
+}
+.btn_pesquisar{
+    text-align: center;
+}
+.btn_pesquisar input{
+    font-size: 15px;
+    height: 30px;
+    border: 1px solid #12FF72;
+    border-radius: 15px;
+}
+.btn_pesquisar input::placeholder{
+    text-align: center;
+}
+btn-icon-kits{
+    background-color: gray;
+    display: flex;
+    flex-direction: row;
+}
