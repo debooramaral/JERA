@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../sidebar/imgs/favicon.svg">
+
+    <title>Início</title>
+
+    <script type="text/javascript">
+        function showMe(row){
+            $('#' + row).toggle();
+        }
+    </script>
+
+</head>
+<body> 
+    <iframe src="../sidebar/index.html"></iframe>
+    <div class="container-content">
+        <main class="content">
+            <!-- COLA SEU CÓDIGO AQUI -->
+            <div class="parte-superior-kits">
+                <div class="titulokits">
+                    <h1 class="kits">Kits</h1>
+                </div>
+
+                <div class="pesquisar">
+                    <div>
+                        <img class="img-pesquisar" src="imgs/twotone_search_black_24dp.png">
+                    </div>
+                    <div>
+                        <input class="input-pesquisar" type="text" placeholder="Pesquisar">
+                    </div>
+                </div>
+
+            </div>
+
+            <script type="text/javascript">
+                function showMe(row){
+                    $('#' + row).toggle();
+                }
+
+            </script>
+
+            <div class="container-kits">
+                <div class="tabela-kits">
+                    <table class="table table-borderless">
+                        <thead>
+                            <tr>
+                                <th scope="col">Categoria</th>
+                                <th scope="col">Descrição</th>
+                                <th scope="col">Quantidade</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr onclick="showMe('linha1')">
+                            <td class="coluna-categoria"><a href="#"><img class="img-editar" src="imgs/editar.svg"/></a>Aniversariante</td>
+                            <td class="coluna-descricao">Kit para aniversario 01</td>
+                            <td>23</td>
+                            </tr>
+                            <tr id="linha1" class="hidden_row">
+                                <td class="linhaexpansiva" colspan=3>
+                                    • Bombom de chocolate <a href="#">(3)</a>
+                                    • Adesivo com mensagem <a href="#">(1)</a>
+                                    • Caneta da JERA, personalizada com nome da pessoa <a href="#">(1)</a>
+                                </td>
+                            </tr>
+                            <tr onclick="showMe('linha2')">
+                            <td class="coluna-categoria"><a href="#"><img class="img-editar" src="imgs/editar.svg"/></a>Roupa</td>
+                            <td class="coluna-descricao">Camiseta JERA branca - M</td>
+                            <td>15</td>
+                            </tr>
+                            <tr id="linha2" class="hidden_row">
+                                <td class="linhaexpansiva" colspan=3>
+                                    • Camiseta com detalhes sobre programador <a href="#">(0)</a>
+                                </td>
+                            </tr>
+                            <tr onclick="showMe('linha3')">
+                            <td class="coluna-categoria"><a href="#"><img class="img-editar" src="imgs/editar.svg"/></a>10 anos</td>
+                            <td class="coluna-descricao">Kit para comemorar os 10 anos de empresa</td>
+                            <td>32</td>
+                            </tr>
+                            <tr id="linha3" class="hidden_row">
+                                <td class="linhaexpansiva" colspan=3>
+                                    • Camiseta especial 10 anos <a href="#">(32)</a><br>
+                                    • Bone com logo da JERA em branco <a href="#">(57)</a><br>
+                                    • Caderneta capa 10 anos <a href="#">(70)</a><br>
+                                    <a href="#">Saída</a><br>
+                                    <a href="#">Inativar Item</a><br>
+                                </td>
+                            </tr>
+
+                            <tr onclick="showMe('linha4')">
+                            <td class="coluna-categoria"><a href="#"><img class="img-editar" src="imgs/editar.svg"/></a>Aniversariante</td>
+                            <td class="coluna-descricao">Kit para aniversario 01</td>
+                            <td>23</td>
+                            </tr>
+                            <tr id="linha4" class="hidden_row">
+                                <td class="linhaexpansiva" colspan=3>
+                                    • Bombom de chocolate <a href="#">(3)</a>
+                                    • Adesivo com mensagem <a href="#">(1)</a>
+                                    • Caneta da JERA, personalizada com nome da pessoa <a href="#">(1)</a>
+                                </td>
+                            </tr>
+                            <tr onclick="showMe('linha5')">
+                            <td class="coluna-categoria"><a href="#"><img class="img-editar" src="imgs/editar.svg"/></a>Roupa</td>
+                            <td class="coluna-descricao">Camiseta JERA branca - M</td>
+                            <td>15</td>
+                            </tr>
+                            <tr id="linha5" class="hidden_row">
+                                <td class="linhaexpansiva" colspan=3>
+                                    • Camiseta com detalhes sobre programador <a href="#">(0)</a>
+                                </td>
+                            </tr>
+                            <tr onclick="showMe('linha6')">
+                            <td class="coluna-categoria"><a href="#"><img class="img-editar" src="imgs/editar.svg"/></a>10 anos</td>
+                            <td class="coluna-descricao">Kit para comemorar os 10 anos de empresa</td>
+                            <td>32</td>
+                            </tr>
+                            <tr id="linha6" class="hidden_row">
+                                <td class="linhaexpansiva" colspan=3>
+                                    • Camiseta especial 10 anos <a href="#">(32)</a><br>
+                                    • Bone com logo da JERA em branco <a href="#">(57)</a><br>
+                                    • Caderneta capa 10 anos <a href="#">(70)</a><br>
+                                    <a href="#">Saída</a><br>
+                                    <a href="#">Inativar Item</a><br>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="botoes-kits">
+                    <div class="botao-novo">
+                        <button>Novo</button>
+                    </div>
+                    <div class="botao-relatorio">
+                        <button>Gerar Relatório</button>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+        <footer>
+            <p id="ano-designedBy"> 2022 | Designed By&nbsp;</p>
+            <a href="#" id="fabricaSoftware">Fábrica de Software T.57&#160;</a>
+            <a href="https://www.ms.senac.br/" target="_blank" id="fabricaSoftware">Senac MS</a>
+        </footer>
+    </div>
+</body>
+</html>
