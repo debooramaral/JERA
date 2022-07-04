@@ -1,0 +1,200 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Montserrat', sans-serif;
+    color: #111;
+}
+:root{
+    --verde: #0DB551;
+    --verde-florescente: #12FF72;
+    --roxo: #7C12CD;
+    --roxo-claro: #DABDF0;
+    --preto: #111;
+    --card-login: #707070;
+    --branco: #FCFCFC;
+    --cinza: #E7E7E7;
+    --cinza-inativo: #C4C4C4;
+    --cinza-input: #f0f0f0;
+}
+body{
+    display: flex;
+}
+
+iframe{
+    height: auto;
+    width: 15.6rem;
+    border: none;
+}
+
+.container-content{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
+
+.content{
+    flex: 2;
+
+}
+
+/* COLA SEU CSS AQUI */
+
+/*------------------------------------------TOPO*/
+#area_topo{
+    display: flex;
+    justify-content: center;
+}
+#areatabela{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#area_botoes{
+    display: flex;
+    justify-content: space-around;
+}
+/*----------------------------------------titulo*/
+#areatitulo{
+    font-size: 32px;
+    margin-left: 30%;
+    padding: 10px 10px;
+}
+/*---------------------------------------buscar*/
+#buscarkits{
+    margin-left: 25%;
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+}
+#img-buscar img{
+    width: 40px;
+}
+#input-buscar input{
+    width: 15vw;
+    height: 3vh;
+    padding-left: 5px;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid var(--cinza-inativo);
+    font-size: 18px;
+}
+/*---------------------------------------tabela*/
+#areatabela{
+    height: 75vh;
+    width: 85%;
+    padding-top: 2vw;
+    margin-left: 3%;
+    justify-content: flex-start;
+}
+.table{
+    height: 73vh;
+    width: 98%;
+}
+/*-----------------------------------scroll bar*/
+#areatabela{
+    overflow: scroll;
+    max-height: 95%;
+    min-height: 20%;
+}
+#areatabela::-webkit-scrollbar{
+    width: 10px;
+    height: 0px;
+}
+#areatabela::-webkit-scrollbar-track{
+    background-color: var(--cinza);
+    border-radius: 30px;
+    height: 100px;
+}
+#areatabela::-webkit-scrollbar-thumb{
+    background-color: var(--verde-florescente);
+    border-radius: 30px;
+}
+/*----------------------------------tHEAD*/
+#categoria_k, #descriçao_k, #quantidade_k{
+    font-size: 24px;
+    border-radius: 0;
+    border-bottom: 3px solid var(--verde-florescente);
+}
+/*---------------------------------tabela*/
+#areatabela table{
+    border-collapse: separate;
+    border-spacing: 80px 10px;
+}
+/*---------------------------------linhas tabela*/
+#areatabela tbody{
+    font-size: 18px;
+}
+#areatabela tr{
+    text-align: center;
+}
+#linha_k td{
+    border-bottom: 1px solid var(--cinza-inativo);
+    padding: 0px;
+}
+#areatabela td a{
+    text-decoration: none;
+    color: var(--roxo);
+}
+#img-editar{
+    width: 15px;
+}
+td #editar_kits{
+    padding-right: 5px;
+}
+#coluna-descriçao{
+    text-align: start;
+}
+/*-------------------linha expansiva*/
+.table .hidden_row{
+    display: none;
+}
+
+
+/*--------------------------------botões*/
+#area_botoes button{
+    color: var(--roxo);
+    border: 2px solid var(--roxo);
+    background-color: transparent;
+    border-radius: 30px;
+    width: 150px;
+    height: 40px;
+    font-size: 18px;
+    font-weight: bold;
+}
+#area_botoes button:hover{
+    cursor: pointer;
+    border: none;
+    background-color: var(--verde);
+    color: white;
+}
+
+/* FIM */
+
+footer{
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: #9E9E9E;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#ano-designedBy{
+    text-decoration: none;
+    font-size: 12px;
+    color: #9E9E9E;
+}
+
+#fabricaSoftware{
+    text-decoration: none;
+    color: #9E9E9E;
+}
+
+#fabricaSoftware:hover{
+    color: #0DB451;
+    font-weight: bold;
+}
