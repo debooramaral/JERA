@@ -16,16 +16,51 @@
     --cinza-inativo: #C4C4C4;
     --cinza-input: #f0f0f0;
 }
+
+h1{
+    font-family: var(--font-titulo-sub);
+    font-size: 40px;
+    color: var(--preto);
+}
+h2{
+
+    font-family: var(--font-titulo-sub);
+    font-size: 32px;
+    color: var(--preto);
+}
+h3{
+    font-family: var(--font-titulo-sub);
+    font-size: 24px;
+    color: var(--preto);
+}
+h4{
+    font-family: var(--font-titulo-sub);
+    font-size: 22px;
+    color: var(--preto);
+}
+h5{
+    font-family: var(--font-titulo-sub);
+    font-size: 18px;
+    color: var(--preto);
+}
+h6{
+    font-family: var(--font-titulo-sub);
+    font-size: 16px;
+    color: var(--preto);
+}
+p{
+    font-family: var(--font-paragrafo);
+    font-size: 14px;
+    color: var(--preto);
+}
 body{
     display: flex;
 }
-
 iframe{
     height: auto;
     width: 15.6rem;
     border: none;
 }
-
 .container-content{
     width: 100%;
     height: 100vh;
@@ -37,7 +72,6 @@ iframe{
 
 .content{
     flex: 2;
-
 }
 
 /* COLA SEU CSS AQUI */
@@ -45,85 +79,106 @@ iframe{
 /*------------------------------------------TOPO*/
 #area_topo{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
 #areatabela{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 10px;
+}
+.scroll-tabela{
+    margin: 2% 0;
 }
 #area_botoes{
     display: flex;
     justify-content: space-around;
+    margin-top: 3px;
 }
 /*----------------------------------------titulo*/
 #areatitulo{
-    font-size: 32px;
-    margin-left: 30%;
-    padding: 10px 10px;
+    padding: 30px 0 0 40%;
+}
+#areatitulo h1{
+    font-weight: bold;
+    align-items: flex-end;
 }
 /*---------------------------------------buscar*/
 #buscarkits{
-    margin-left: 25%;
-    width: 20vw;
     display: flex;
-    justify-content: center;
-    padding-top: 40px;
-}
-#img-buscar img{
-    width: 40px;
-}
-#input-buscar input{
-    width: 15vw;
-    height: 3vh;
-    padding-left: 5px;
-    outline: none;
-    border: none;
+    flex-direction: row;
+    align-items: center;
+    padding: 40px 10% 0 0;
+    margin-right: 10%;
     border-bottom: 2px solid var(--cinza-inativo);
+    width: 10%;
+    /*transform: translateX(34rem);*/
+}
+#icon-k{
+    /*transform: scale(0.8) translateY(3px);*/
+    margin-bottom: 0;
+    border: none;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: var(--branco);
+}
+#input-buscar{
+    margin-left: 10px;
+    border: none;
     font-size: 18px;
+    font-family: var(--font-paragrafo);
+    outline: none;
+    background: var(--branco);
+}
+#icon-k img{
+    width: 25px;
 }
 /*---------------------------------------tabela*/
-#areatabela{
-    height: 75vh;
-    width: 85%;
-    padding-top: 2vw;
-    margin-left: 3%;
+#areatabela{ /*area total da tabela*/
+    height: 85vh;
+    width: 95%;
+    margin: 0 4% 0 2%;
     justify-content: flex-start;
 }
-.table{
-    height: 73vh;
-    width: 98%;
+.scroll-tabela{
+    height: 90vh;
+    width: 99%;
+}
+.table{ /*area que determina o tamanho da linha de forma geral*/
+    height: 20vw;
+    width: 95%;
 }
 /*-----------------------------------scroll bar*/
-#areatabela{
+.scroll-tabela{
     overflow: scroll;
     max-height: 95%;
     min-height: 20%;
 }
-#areatabela::-webkit-scrollbar{
+.scroll-tabela::-webkit-scrollbar{
     width: 10px;
     height: 0px;
 }
-#areatabela::-webkit-scrollbar-track{
+.scroll-tabela::-webkit-scrollbar-track{
     background-color: var(--cinza);
     border-radius: 30px;
     height: 100px;
 }
-#areatabela::-webkit-scrollbar-thumb{
+.scroll-tabela::-webkit-scrollbar-thumb{
     background-color: var(--verde-florescente);
     border-radius: 30px;
 }
 /*----------------------------------tHEAD*/
 #categoria_k, #descriçao_k, #quantidade_k{
-    font-size: 24px;
-    border-radius: 0;
-    border-bottom: 3px solid var(--verde-florescente);
+    font-size: 32px;
+    font-weight: lighter;
+    border-bottom: 3px solid var(--verde);
 }
-/*---------------------------------tabela*/
-#areatabela table{
+/*---------------------------------tabela e espaçamentos entre linhas e colunas*/
+/*#areatabela table{
     border-collapse: separate;
-    border-spacing: 80px 10px;
-}
+    border-spacing: 10px 5px;
+}*/
 /*---------------------------------linhas tabela*/
 #areatabela tbody{
     font-size: 18px;
@@ -131,13 +186,8 @@ iframe{
 #areatabela tr{
     text-align: center;
 }
-#linha_k td{
+.nome-l, .descriçao-l, .quantidade-l{
     border-bottom: 1px solid var(--cinza-inativo);
-    padding: 0px;
-}
-#areatabela td a{
-    text-decoration: none;
-    color: var(--roxo);
 }
 #img-editar{
     width: 15px;
@@ -146,41 +196,81 @@ td #editar_kits{
     padding-right: 5px;
 }
 #coluna-descriçao{
-    text-align: start;
+    text-align: center;
 }
 /*-------------------linha expansiva*/
-.table .hidden_row{
-    display: none;
+.subRow td{
+    display: flex;
+    justify-content: space-between;
+    width: 230%;
 }
-
+.subRow td p{
+    font-size: 18px;
+}
+.subRow td:hover{
+    border: 2px solid var(--roxo);
+    border-radius: 10px;
+}
+.qtdd-brinde-kits{
+   color: var(--roxo);
+}
+.ponto-kits{
+    color: var(--roxo);
+    font-size: 50px;
+}
+.iten-kit{
+    text-align: left;
+    margin: auto 10%;
+}
+.iten-kit p{
+    padding: 0;
+    margin: 0;
+}
+.btn-kit{
+    text-align: right;
+    margin: auto 5%;
+}
+.btn-kit p{
+    width: 100%;
+    padding: 15% 0
+}
 
 /*--------------------------------botões*/
 #area_botoes button{
-    color: var(--roxo);
-    border: 2px solid var(--roxo);
-    background-color: transparent;
     border-radius: 30px;
     width: 150px;
     height: 40px;
-    font-size: 18px;
     font-weight: bold;
+    font-size: 20px;
 }
-#area_botoes button:hover{
-    cursor: pointer;
-    border: none;
-    background-color: var(--verde);
-    color: white;
+#botaonovo_k button{
+    border: 2px solid var(--roxo);
+    color: var(--roxo);
 }
+#botaonovo_k button:hover{
+    background: var(--roxo);
+    color: var(--branco);
+}
+#botaorelatorio_k button{
+    border: 2px solid var(--verde);
+    color: var(--verde);
+}
+#botaorelatorio_k button:hover{
+    background: var(--verde);
+    color: var(--branco);
+}
+
 
 /* FIM */
 
 footer{
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     font-size: 12px;
-    color: #9E9E9E;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    color: #9E9E9E;
+    text-align: center;
 }
 
 #ano-designedBy{
