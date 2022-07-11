@@ -97,7 +97,7 @@ iframe{
 }
 /*----------------------------------------titulo*/
 #areatitulo{
-    padding: 30px 0 0 40%;
+    padding: 5px 0 0 45%;
 }
 #areatitulo h1{
     font-weight: bold;
@@ -108,20 +108,20 @@ iframe{
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 40px 10% 0 0;
-    margin-right: 10%;
+    padding: 0 10% 0 0;
     border-bottom: 2px solid var(--cinza-inativo);
     width: 10%;
-    /*transform: translateX(34rem);*/
+}
+#buscarkits img:hover{
+    cursor: pointer;
 }
 #icon-k{
-    /*transform: scale(0.8) translateY(3px);*/
     margin-bottom: 0;
     border: none;
     align-items: center;
     width: 100%;
     height: 100%;
-    background: var(--branco);
+    background: none;
 }
 #input-buscar{
     margin-left: 10px;
@@ -129,10 +129,9 @@ iframe{
     font-size: 18px;
     font-family: var(--font-paragrafo);
     outline: none;
-    background: var(--branco);
 }
 #icon-k img{
-    width: 25px;
+    width: 30px;
 }
 /*---------------------------------------tabela*/
 #areatabela{ /*area total da tabela*/
@@ -146,7 +145,7 @@ iframe{
     width: 99%;
 }
 .table{ /*area que determina o tamanho da linha de forma geral*/
-    height: 20vw;
+    height: 15vw;
     width: 95%;
 }
 /*-----------------------------------scroll bar*/
@@ -163,9 +162,10 @@ iframe{
     background-color: var(--cinza);
     border-radius: 30px;
     height: 100px;
+    border: 1px solid var(--verde);
 }
 .scroll-tabela::-webkit-scrollbar-thumb{
-    background-color: var(--verde-florescente);
+    background-color: var(--verde);
     border-radius: 30px;
 }
 /*----------------------------------tHEAD*/
@@ -175,10 +175,10 @@ iframe{
     border-bottom: 3px solid var(--verde);
 }
 /*---------------------------------tabela e espaçamentos entre linhas e colunas*/
-/*#areatabela table{
+#areatabela table{
     border-collapse: separate;
-    border-spacing: 10px 5px;
-}*/
+    border-spacing: 0px 5px;
+}
 /*---------------------------------linhas tabela*/
 #areatabela tbody{
     font-size: 18px;
@@ -188,6 +188,9 @@ iframe{
 }
 .nome-l, .descriçao-l, .quantidade-l{
     border-bottom: 1px solid var(--cinza-inativo);
+}
+#linha_k:hover td{
+    border-bottom: 1px solid var(--roxo);
 }
 #img-editar{
     width: 15px;
@@ -202,7 +205,8 @@ td #editar_kits{
 .subRow td{
     display: flex;
     justify-content: space-between;
-    width: 230%;
+    width: 229%;
+    border: 2px solid transparent;
 }
 .subRow td p{
     font-size: 18px;
@@ -234,6 +238,13 @@ td #editar_kits{
     width: 100%;
     padding: 15% 0
 }
+.btn-kit a{
+    text-decoration: none;
+}
+.btn-kit a:hover{
+    text-decoration: underline;
+    color: var(--roxo);
+}
 
 /*--------------------------------botões*/
 #area_botoes button{
@@ -246,20 +257,26 @@ td #editar_kits{
 #botaonovo_k button{
     border: 2px solid var(--roxo);
     color: var(--roxo);
+    background: none;
+    transition: all .4s ease-in-out;
 }
 #botaonovo_k button:hover{
     background: var(--roxo);
     color: var(--branco);
+    cursor: pointer;
+    transition: all .4s ease-in-out;
 }
 #botaorelatorio_k button{
     border: 2px solid var(--verde);
     color: var(--verde);
+    background: none;
+    cursor: pointer;
+    transition: all .4s ease-in-out;
 }
 #botaorelatorio_k button:hover{
     background: var(--verde);
     color: var(--branco);
 }
-
 
 /* FIM */
 
