@@ -8,15 +8,11 @@
     <link rel="stylesheet" href="estilok.css">
     <!--icone da pagina-->
     <link rel="icon" type="image/x-icon" href="./imgs/brinde-kits.svg">
-    <!--java script linha expansiva-->
+    <!--java script linha expansiva e MODAL-->
     <script src="scriptk.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!--Modal CSS-->
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
-    <!--Modal Java Script-->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Kits</title>
 </head>
 
@@ -56,17 +52,21 @@
                         <tbody>
                             <!--linha normal e expansiva-->
                             <tr id="linha_k" name="linha_k" class="parentRow" onclick="showHideRow('linha_1');">
-                                <td class="nome-l"><a href="#" id="editar_kits"><img id="img-editar" src="imgs/editar.svg"></a>Aniversariante</td>
+                                <td class="nome-l"><a href="#" id="editar_kits"><img id="img-editar"
+                                            src="imgs/editar.svg"></a>Aniversariante</td>
                                 <td class="descriçao-l" id="coluna-descriçao">Kit para aniversario de 01 ano</td>
                                 <td class="quantidade-l">23</td>
                             </tr>
                             <tr id="linha_1" class="subRow" style="display: none;">
                                 <td colspan="3" id="linha_e" name="linha_e">
                                     <div class="iten-kit">
-                                        <p><span class="ponto-kits">•</span>Agenda da Jera <span class="qtdd-brinde-kits">(32)</span class="qtdd-brinde-kits"></p>
+                                        <p><span class="ponto-kits">•</span>Agenda da Jera <span
+                                                class="qtdd-brinde-kits">(32)</span class="qtdd-brinde-kits"></p>
                                         <!--informação que vem do banco de dados a partir da tabela de brindes, o númeo é ficticio-->
-                                        <p><span class="ponto-kits">•</span>Caneta da Jera <span class="qtdd-brinde-kits">(23)</span class="qtdd-brinde-kits"></p>
-                                        <p><span class="ponto-kits">•</span>Cartão de Mensagem <span class="qtdd-brinde-kits">(1)</span class="qtdd-brinde-kits"></p>
+                                        <p><span class="ponto-kits">•</span>Caneta da Jera <span
+                                                class="qtdd-brinde-kits">(23)</span class="qtdd-brinde-kits"></p>
+                                        <p><span class="ponto-kits">•</span>Cartão de Mensagem <span
+                                                class="qtdd-brinde-kits">(1)</span class="qtdd-brinde-kits"></p>
                                     </div>
                                     <div class="btn-kit">
                                         <p><a href="#">Inativar Item</a></p>
@@ -77,6 +77,42 @@
                     </table>
                 </div>
 
+                <section class="modal-kits">
+
+                    <div class="modal_criar" id="criar">
+                        <div class="modal_content_criar">
+
+                            <!--head modal-->
+                            <div class="head_modal">
+                                <h2>Criar Kit</h2>
+                                <p>Selecione os Brindes que compõe o Kit</p>
+                            </div>
+
+                            <!--body modal-->
+                            <div class="body_modal">
+                                <fieldset>
+                                    <label for="">Nome:</label><input type="text"><br>
+                                    <label for="">Brinde:</label><select name="" id=""></select><br>
+                                    <label for="">Descrição:</label><br>
+                                    <textarea name="" id="" cols="60" rows="5"></textarea>
+                                </fieldset>
+                            </div>
+                            
+                            <!--botoes modal-->
+                            <div class="botoes-criar">
+                                <div id="cancelark">
+                                    <button class="btn_cancelar" id="cancelar" onclick="fecharCriarkit('modal_criar')">Cancelar</button>
+                                </div>
+                                <div id="criark">
+                                    <button class="btn_cancelar" id="criar">Criar</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                </section>
+
             </main>
 
             <!-- mude o e coloque seu id com nome da sua tela -->
@@ -85,9 +121,11 @@
                     <button>Relatório</button>
                 </div>
                 <div id="botaonovo_k">
-                    <button>Novo</button>
+                    <button onclick="abrirCriarkit('modal_criar')">Novo</button>
                 </div>
             </div>
+
+            
 
             <div id="pe_kits">
                 <footer id="pe">

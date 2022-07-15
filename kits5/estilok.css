@@ -254,6 +254,135 @@ table{
     background: var(--verde);
     color: var(--branco);
 }
+/*MODAL*/
+
+/*fundo escuro*/
+.modal_criar{
+    background: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+/*modal KITS*/
+.modal_content_criar{
+    background: var(--branco);
+    width: 30vw;
+    height: 40vh;
+    margin: 10% 40%;
+    border-radius: 10px;
+    border: 1px solid var(--verde);
+}
+/*head modal*/
+.head_modal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+    font-weight: lighter;
+    font-family: 'Montserrat', sans-serif;
+    margin: 2%;
+}
+.head_modal p{
+    color: var(--roxo);
+    font-size: 16px;
+}
+/*body modal*/
+.body_modal{
+    display: flex;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+}
+.body_modal fieldset{
+    border: none;
+    margin-top: 5%;
+    justify-content: center;
+}
+.body_modal label{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    padding: 0 2% 10% 0;
+}
+.body_modal input{
+    border: 1px solid var(--verde);
+    border-radius: 5px;
+    outline: transparent;
+    width: 80%;
+    padding: 1%;
+    margin-bottom: 2%;
+}
+.body_modal input:hover{
+    outline: var(--roxo);
+    border: 1px solid var(--roxo);
+    border-radius: 5px;
+}
+.body_modal select{
+    border: 1px solid var(--verde);
+    border-radius: 5px;
+    color: var(--verde);
+    width: 80%;
+    padding: 1%;
+    margin-bottom: 2%;
+    outline: transparent;
+}
+.body_modal select:hover{
+    outline: var(--roxo);
+    border: 1px solid var(--roxo);
+    border-radius: 5px;
+    color: var(--roxo);
+}
+.body_modal textarea{
+    border: 1px solid var(--verde);
+    border-radius: 5px;
+    outline: transparent;
+    margin-bottom: 2%;
+}
+.body_modal textarea:hover{
+    outline: var(--roxo);
+    border: 1px solid var(--roxo);
+    border-radius: 5px;
+}
+/*botões modal*/
+.botoes-criar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 1% 0;
+}
+.botoes-criar button{
+    border-radius: 30px;
+    width: 150px;
+    height: 40px;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+#cancelark button{
+    border: 2px solid var(--verde);
+    color: var(--verde);
+    background: none;
+    transition: all .4s ease-in;
+}
+#cancelark button:hover{
+    background: var(--verde);
+    color: var(--branco);
+    cursor: pointer;
+    transition: all .4s ease-in;
+}
+#criark button{
+    border: 2px solid var(--roxo);
+    color: var(--roxo);
+    background: none;
+    cursor: pointer;
+    transition: all .4s ease-in;
+}
+#criark button:hover{
+    background: var(--roxo);
+    color: var(--branco);
+}
+
 
 /* FOOTER */
 #pe_kits{
@@ -286,7 +415,6 @@ table{
     color: #0DB451;
     font-weight: bold;
 }
-
 
 /* responsividade */
 @media only screen and (max-width: 1304px) {
