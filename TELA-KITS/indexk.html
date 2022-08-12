@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--icone da pagina-->
+    <link rel="icon" type="image/x-icon" href="./imgs/brinde-kits.svg">
+    <!-- fonte -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <!--java script linha expansiva e MODAL-->
+    <script src="scriptk.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- estilo -->
+    <link rel="stylesheet" href="estilok.css">
+    <title>Kits</title>
+</head>
+<body>
+
+    <body>
+        <iframe src="./sidebar/index.html"></iframe>
+        <div class="container">
+            <!-- mude o e coloque seu id -->
+            
+            <div id="titulo_kits">
+                <h1 id="testetttt">Kits</h1>
+
+                <div id="pesquisar">
+                    <div id="pesq">
+                        <div>
+                            <button id="icon" href="#"><img src="./imgs/twotone_search_black_24dp.png" alt=""></button>
+                        </div>
+                        <div>
+                            <input id="input-pesq" placeholder="Pesquisar" type="text" onkeyup="searchTableColumns()">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- mude o e coloque seu id -->
+            <main id="main-kits">
+                <div id="scroll-kits">
+                    <!-- mude o e coloque seu id com nome de sua tabela-->
+                    <table id="kits">
+                        <thead>
+                            <tr class="titulok">
+                                <th class="titulo_tabela_editar"></th>
+                                <th class="titulo_tabela">Objeto</th>
+                                <th class="titulo_tabela_meio">Descrição</th>
+                                <th class="titulo_tabela">Quantidade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- linhas tabelas -->
+                            <tr class="linhas" onclick="showHideRow('linha');">
+                                <!-- coluna editar -->
+                                <td class="colunas">
+                                    <div class="conteudo coluna1">
+                                        <button class="btn_editar"><img src="./imgs/editar.svg" alt="editar" onclick="openModal('.modal')"></button>
+                                    </div>
+                                </td>
+
+                                <!-- coluna objeto-->
+                                <td class="colunas">
+                                    <div class="conteudo coluna1">
+                                        <label class="label_objeto">Aniversariante</label>
+                                    </div>
+                                </td>
+
+                                <!-- coluna descrição-->
+                                <td class="colunas">
+                                    <div class="conteudo1 coluna2">
+                                        <label class="label_descricao_conteudo">Kit para aniversario 01</label>
+                                    </div>
+                                </td>
+
+                                <!-- coluna quantidade-->
+                                <td class="colunas">
+                                    <div class="conteudo coluna3">
+                                        <label class="label_quantidade">23</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- linha expansiva -->
+                            <tr style="display: none;" class="subRow" id="linha">
+                                <td colspan="4">
+                                    <div class="contente-itens-kits">
+                                        <div class="iten-kit">
+                                            <!--informação que vem do banco de dados a partir da tabela de brindes-->
+                                            <div>
+                                                <p><span class="ponto-kits">•</span>BANCO DE DADOS<span class="qtdd-brinde-kits">(BRINDE)</span></p>
+                                            </div>
+                                            <div>
+                                                <p><span class="ponto-kits">•</span>BANCO DE DADOS<span class="qtdd-brinde-kits">(BRINDE)</span></p>
+                                            </div>
+                                            <div>
+                                                <p><span class="ponto-kits">•</span>BANCO DE DADOS<span class="qtdd-brinde-kits">(BRINDE)</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="btn-kit">
+                                            <p><a href="#">Inativar Item</a></p>
+                                            <p><a href="#">Saída</a></p>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <section class="modal-kits">
+
+                    <div class="modal_criar" id="criar">
+                        <div class="modal_content_criar">
+
+                            <!--head modal-->
+                            <div class="head_modal">
+                                <h2 class="titulok-modal">Criar Kit</h2>
+                                <p>Selecione os Brindes que compõe o Kit</p>
+                            </div>
+
+                            <!--body modal-->
+                            <div class="body_modal">
+                                <div class="nome-kit"><label for="">Nome do Kit:</label><input type="text"></div>
+                                <div class="select-kits">
+                                    <label for="">Brinde: 
+                                        <form> 
+                                            <div class="multiselect">
+                                                <div class="selectBox" onclick="showCheckboxes()">
+                                                    <select>
+                                                        <option>Selecione os Itens</option>
+                                                    </select>
+                                                    <div class="overSelect"></div>
+                                                </div>
+                                                <div class="list-brindes-k" id="checkboxes">
+                                                    <label for="one">
+                                                        <input type="checkbox" id="one"/>First checkbox
+                                                    </label>
+                                                    <label for="two">
+                                                        <input type="checkbox" id="two"/>Second checkbox
+                                                    </label>
+                                                    <label for="three">
+                                                        <input type="checkbox" id="three"/>Third checkbox
+                                                    </label>
+                                                    
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </label>
+                                </div>
+                                <div class="descricao-k">
+                                    <fieldset>
+                                        <legend>Descrição:</legend>
+                                        <textarea name="" id="" cols="40" rows="5" style="resize: none;"></textarea> 
+                                    </fieldset>
+                                </div> 
+                            </div>
+                            
+                            <!--botoes modal-->
+                            <div class="botoes-criar">
+                                <div id="cancelark">
+                                    <button class="btn_cancelark" id="cancelar" onclick="fecharCriarkit()">Cancelar</button>
+                                </div>
+                                <div id="criark">
+                                    <button class="btn_criark" id="criar" onclick="proximoCriarkit()">Criar</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="modal_criar_list" id="criar-list">
+                        <div class="modal_content_criar_lits"> 
+                        
+                            <div class="head_modal_list">
+                                <div class="titulos-modal-k">
+                                    <h2 class="titulok-modal">Criar Kit</h2>
+                                    <p>Selecione os Brindes que compõe o Kit</p>
+                                </div>
+                                <div class="fechar-k-list">
+                                    <a href="">x</a>
+                                </div>
+                            </div>
+
+                            <div class="body_modal_list">
+                                
+                                <div class="list-modal">
+                                    <div class="titulok-list">
+                                        <label>Brinde 01: </label>
+                                    </div>
+                                    <div class="list-brinde">
+                                        <input type="checkbox" id="lista-kits" name="lista-kits" checked>
+                                        <label for="lista-kits">BANCO DE DADOS</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="botoes-criar-list">
+                                <div id="voltark-list">
+                                    <button class="btn_voltar_list" id="voltar-list" onclick="voltarkit('.modal_add_item_3')">Voltar</button>
+                                </div>
+                                <div id="salvark-list">
+                                    <button class="btn_salvar_list" id="salvar-list" onclick="salvarkit('.modal_criar_list')">Salvar</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                </section>
+
+            </main>
+
+            <!-- mude o e coloque seu id com nome da sua tela -->
+            <div id="botao_kits">
+                <div id="botaorelatorio_k">
+                    <button>Relatório</button>
+                </div>
+                <div id="botaonovo_k">
+                    <button onclick="abrirCriarkit()">Novo</button>
+                </div>
+            </div>
+           
+            <!-- footer da pagina -->
+            <div id="pe_kits">
+                <footer id="pe">
+                    <p id="ano-designedBy"> 2022 | Designed By&nbsp;</p>
+                    <a href="#" class="fabricaSoftware">Fábrica de Software T.57&#160;</a>
+                    <a href="https://www.ms.senac.br/" target="_blank" class="fabricaSoftware">Senac MS</a>
+                </footer>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+        
+    </body>
+
+</html>
