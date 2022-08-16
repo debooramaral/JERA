@@ -114,6 +114,7 @@ var expanded = false;
 
 function showCheckboxes() {
   var checkboxes = document.getElementById("checkboxes");
+  
   if (!expanded) {
     checkboxes.style.display = "block";
     expanded = true;
@@ -123,5 +124,76 @@ function showCheckboxes() {
   }
 }
 
+//-----------------------------------------BOTÃO ABRIR MODAL DE INATIVAR ITEM - KIT
+function abrirInativaritem()
+{
+    let modal = document.querySelector('.modal_inativar_item');
+        
+    if (typeof modal == 'undefined' || modal == null)
+        return;
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    
+}
+//-----------------------------------------BOTÃO CANCELAR DO MODAL DE INATIVAR ITEM - KIT
+function fecharModalInativaritem()
+{
+    let modal = document.querySelector('.modal_inativar_item');
+    
+    if (typeof modal == 'undefined' || modal == null)
+        return;
+        modal.style.display = 'none';
+}
 
 
+//-----------------------------------------BOTÃO ABRIR MODAL DE SAIDA ITEM - KIT
+
+function abrirSaidaitem()
+{
+    let modal = document.querySelector('.modal_saida_kit');
+        
+    if (typeof modal == 'undefined' || modal == null)
+        return;
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    
+}
+
+//-----------------------------------------BOTÃO CANCELAR DO MODAL DE SAIDA ITEM - KIT
+
+function fecharModalSaidaitem()
+{
+    let modal = document.querySelector('.modal_saida_kit');
+    
+    if (typeof modal == 'undefined' || modal == null)
+        return;
+        modal.style.display = 'none';
+}
+
+//-----------------------------------------BOTÃO OK DO MODAL DE SALVAR SAIDA ITEM - KIT
+
+function salvarSaida()
+{
+    let modal = document.querySelector('.modal_saida_msg');
+
+    let closesalvarsaida = document.querySelector('.modal_saida_kit')
+    
+    if (typeof modal == 'undefined' || modal == null)
+        return;
+        closesalvarsaida.style.display = 'none';
+
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+}
+
+function fecharaviso()
+{
+    let modal = document.querySelector('.modal_saida_msg');
+
+    
+    if (typeof modal == 'undefined' || modal == null)
+        return;
+
+        modal.style.display = 'none';
+        document.body.style.overflow = 'hidden';
+}

@@ -100,8 +100,12 @@
                                             </div>
                                         </div>
                                         <div class="btn-kit">
-                                            <p><a href="#">Inativar Item</a></p>
-                                            <p><a href="#">Saída</a></p>
+                                            <div class="btn-kit-1">
+                                                <button onclick="abrirInativaritem()" >Inativar Item</button>
+                                            </div>
+                                            <div class="btn-kit-2">
+                                                <button onclick="abrirSaidaitem()">Saída</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </td>
@@ -134,17 +138,20 @@
                                                     </select>
                                                     <div class="overSelect"></div>
                                                 </div>
-                                                <div class="list-brindes-k" id="checkboxes">
-                                                    <label for="one">
-                                                        <input type="checkbox" id="one"/>First checkbox
-                                                    </label>
-                                                    <label for="two">
-                                                        <input type="checkbox" id="two"/>Second checkbox
-                                                    </label>
-                                                    <label for="three">
-                                                        <input type="checkbox" id="three"/>Third checkbox
-                                                    </label>
-                                                    
+                                                <div id="checkboxes">
+                                                   
+                                                    <div class="scrolagem">
+                                                        <label for="one">
+                                                            <input type="checkbox" id="one"/>TABELA DE BRINDE
+                                                        </label>
+                                                        <label for="two">
+                                                            <input type="checkbox" id="two"/>TABELA DE BRINDE
+                                                        </label>
+                                                        <label for="three">
+                                                            <input type="checkbox" id="three"/>TABELA DE BRINDE
+                                                        </label>                                                  
+                                                    </div>
+                                                                                                       
                                                 </div>
                                             </div>
                                         </form>
@@ -161,10 +168,10 @@
                             <!--botoes modal-->
                             <div class="botoes-criar">
                                 <div id="cancelark">
-                                    <button class="btn_cancelark" id="cancelar" onclick="fecharCriarkit()">Cancelar</button>
+                                    <button onclick="fecharCriarkit()">Cancelar</button>
                                 </div>
                                 <div id="criark">
-                                    <button class="btn_criark" id="criar" onclick="proximoCriarkit()">Criar</button>
+                                    <button onclick="proximoCriarkit()">Criar</button>
                                 </div>
                             </div>
 
@@ -199,16 +206,88 @@
                             
                             <div class="botoes-criar-list">
                                 <div id="voltark-list">
-                                    <button class="btn_voltar_list" id="voltar-list" onclick="voltarkit('.modal_add_item_3')">Voltar</button>
+                                    <button onclick="voltarkit('.modal_add_item_3')">Voltar</button>
                                 </div>
                                 <div id="salvark-list">
-                                    <button class="btn_salvar_list" id="salvar-list" onclick="salvarkit('.modal_criar_list')">Salvar</button>
+                                    <button onclick="salvarkit('.modal_criar_list')">Salvar</button>
                                 </div>
                             </div>
 
                         </div>
                     </div>
                     
+                    <div class="modal_inativar_item" id="inativar-kit">
+                        <div class="modal_content_inativar">
+                            <div class="msg-inativar">
+                                <h2>Tem certeza que deseja inativar este item?</h2>
+                            </div>
+    
+                            <div class="botoes-inativar">
+                                <div id="cancelar-item">
+                                    <button onclick="fecharModalInativaritem()">Cancelar</button>
+                                </div>
+                                <div id="salvar-inativar-item">
+                                    <button onclick="('')">Salvar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal_saida_kit" id="saida-kit">
+                        <div class="modal_content_saida">
+                            <div class="titulos-modal-k">
+                                <h2 class="titulok-modal">Saida de Kit</h2>
+                                <p>Kit para comemorar os 10 anos da empresa</p>
+                            </div>
+
+                            <div class="body_modal_saida">
+                                
+                                <div class="modal_saida">
+                                    <div>
+                                        <label>Quantidade:</label>
+                                        <input type="text" placeholder="00">
+                                    </div>
+
+                                    <div class="saida-kit-data">
+                                        <label>Data:</label>
+                                        <input type="date">
+                                    </div>
+                                </div>
+
+                                <div class="observacao-saida">
+                                    <fieldset>
+                                        <legend>Observações:</legend>
+                                        <textarea name="" id="" cols="40" rows="3" style="resize: none;"></textarea> 
+                                    </fieldset>
+                                </div>
+
+                            </div>
+                            
+                            <div class="botoes-saida-kit">
+                                <div id="cancelar-saida">
+                                    <button onclick="fecharModalSaidaitem('')">Cancelar</button>
+                                </div>
+                                <div id="salvar-saida">
+                                    <button onclick="salvarSaida('')">Salvar</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="modal_saida_msg" id="saida-kit">
+                        <div class="modal_content_saida_msg">
+                            <div class="msg-saida">
+                                <h2>Saída de kit registrada com sucesso</h2>
+                            </div>
+    
+                            <div class="botao-salvar-saida">
+                                <div id="ok-salvar-saida">
+                                    <button onclick="fecharaviso('')">Ok</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </section>
 
             </main>
