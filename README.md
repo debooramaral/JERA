@@ -27,3 +27,8 @@ Após registrar Saída
 
 
 ![telakits - ago22 modal saida2](https://user-images.githubusercontent.com/87581131/184944643-f2f3c3a9-fa9c-41ed-84ca-95b36c313c6d.jpg)
+
+VIDEO DA TELA
+
+
+[screencast-nimbus-capture-2022.08.16-14_15_14.webm](https://user-images.githubusercontent.com/87581131/184950776-2faff332-1cb7-4b35-80b7-68f0a8519efe.webm)
