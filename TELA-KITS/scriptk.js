@@ -34,7 +34,7 @@ function searchTableColumns() {
     
   }
 
-// modal criar kit
+// modais
 
 //-----------------------------------------BOTÃO NOVO KIT
 function abrirCriarkit()
@@ -107,23 +107,7 @@ function salvarkit()
         modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
 }
-
-//multiselect
-
-var expanded = false;
-
-function showCheckboxes() {
-  var checkboxes = document.getElementById("checkboxes");
-  
-  if (!expanded) {
-    checkboxes.style.display = "block";
-    expanded = true;
-  } else {
-    checkboxes.style.display = "none";
-    expanded = false;
-  }
-}
-
+    
 //-----------------------------------------BOTÃO ABRIR MODAL DE INATIVAR ITEM - KIT
 function abrirInativaritem()
 {
@@ -135,6 +119,7 @@ function abrirInativaritem()
         document.body.style.overflow = 'hidden';
     
 }
+
 //-----------------------------------------BOTÃO CANCELAR DO MODAL DE INATIVAR ITEM - KIT
 function fecharModalInativaritem()
 {
@@ -144,7 +129,6 @@ function fecharModalInativaritem()
         return;
         modal.style.display = 'none';
 }
-
 
 //-----------------------------------------BOTÃO ABRIR MODAL DE SAIDA ITEM - KIT
 
@@ -196,4 +180,73 @@ function fecharaviso()
 
         modal.style.display = 'none';
         document.body.style.overflow = 'hidden';
+}
+
+//-----------------------------------------BOTÃO EDITAR KIT
+
+function abrirEditarKit()
+{
+    let modal = document.querySelector('.modal_editar');
+
+    if (typeof modal == 'undefined' || modal == null)
+        return;
+
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+}
+//-----------------------------------------BOTÃO CANCELAR Edição do KIT
+
+function fecharEditarkit()
+{
+    let modal = document.querySelector('.modal_editar');
+    let modalSalvar = document.querySelector('.modal_editar');
+    
+    if (typeof modal == 'undefined' || modal == null)
+        return;
+        modal.style.display = 'none';
+        modalSalvar.style.display = 'none';
+}
+
+//-----------------------------------------BOTÃO SALVAR Edição do KIT
+
+function salvareditarkit()
+{
+    let modal = document.querySelector('.modal_editar');
+
+    let closesalvarkit = document.querySelector('.modal_editar')
+    
+    if (typeof modal == 'undefined' || modal == null)
+        return;
+        closesalvarkit.style.display = 'none';
+
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+}
+
+// PESQUISAR ITEM DOS BRINDES
+
+
+// ADICIONAR BRINDE AO KIT
+
+function adicionaritem(){
+    const brinde_k = document.querySelector('.linha-list-brinde')
+    const criarlinha = 
+    `
+    <div class="colunas-list-brinde">
+        <div class="fundo-cinza-k">
+            <div class="brindes-kit">
+                <label for="">Brinde:</label>
+                <input type="text" list="brindedokit" placeholder="Busque">
+            </div>
+            <datalist id="brindedokit">
+                <option value=""></option>
+            </datalist>
+            <div class="quantidade-brinde">
+                <label>01</label>
+            </div>
+        </div>
+    </div>
+        
+    `
+    brinde_k.innerHTML += criarlinha
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,19 +12,20 @@
     <!--java script linha expansiva e MODAL-->
     <script src="scriptk.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- estilo -->
     <link rel="stylesheet" href="estilok.css">
     <title>Kits</title>
 </head>
+
 <body>
 
     <body>
         <iframe src="./sidebar/index.html"></iframe>
         <div class="container">
             <!-- mude o e coloque seu id -->
-            
+
             <div id="titulo_kits">
                 <h1 id="testetttt">Kits</h1>
 
@@ -52,13 +54,14 @@
                                 <th class="titulo_tabela">Quantidade</th>
                             </tr>
                         </thead>
+
                         <tbody>
                             <!-- linhas tabelas -->
                             <tr class="linhas" onclick="showHideRow('linha');">
                                 <!-- coluna editar -->
                                 <td class="colunas">
-                                    <div class="conteudo coluna1">
-                                        <button class="btn_editar"><img src="./imgs/editar.svg" alt="editar" onclick="openModal('.modal')"></button>
+                                    <div class="conteudo coluna0">
+                                        <button class="btn_editar" onclick="abrirEditarKit()"><img src="./imgs/editar.svg" alt="editar" onclick="openModal('.modal')"></button>
                                     </div>
                                 </td>
 
@@ -101,7 +104,7 @@
                                         </div>
                                         <div class="btn-kit">
                                             <div class="btn-kit-1">
-                                                <button onclick="abrirInativaritem()" >Inativar Item</button>
+                                                <button onclick="abrirInativaritem()">Inativar Item</button>
                                             </div>
                                             <div class="btn-kit-2">
                                                 <button onclick="abrirSaidaitem()">Saída</button>
@@ -110,186 +113,257 @@
                                     </div>
                                 </td>
                             </tr>
-                        </tbody>
-                    </table>
-                </div>
 
-                <section class="modal-kits">
+                            <section class="modal-kits">
 
-                    <div class="modal_criar" id="criar">
-                        <div class="modal_content_criar">
+                                <div class="modal_criar" id="criar">
+                                    <div class="modal_content_criar">
 
-                            <!--head modal-->
-                            <div class="head_modal">
-                                <h2 class="titulok-modal">Criar Kit</h2>
-                                <p>Selecione os Brindes que compõe o Kit</p>
-                            </div>
+                                        <!--head modal-->
+                                        <div class="head_modal">
+                                            <h2 class="titulok-modal">Criar Kit</h2>
+                                            <p>Selecione os Brindes que compõe o Kit</p>
+                                        </div>
 
-                            <!--body modal-->
-                            <div class="body_modal">
-                                <div class="nome-kit"><label for="">Nome do Kit:</label><input type="text"></div>
-                                <div class="select-kits">
-                                    <label for="">Brinde: 
-                                        <form> 
-                                            <div class="multiselect">
-                                                <div class="selectBox" onclick="showCheckboxes()">
-                                                    <select>
-                                                        <option>Selecione os Itens</option>
-                                                    </select>
-                                                    <div class="overSelect"></div>
-                                                </div>
-                                                <div id="checkboxes">
-                                                   
-                                                    <div class="scrolagem">
-                                                        <label for="one">
-                                                            <input type="checkbox" id="one"/>TABELA DE BRINDE
-                                                        </label>
-                                                        <label for="two">
-                                                            <input type="checkbox" id="two"/>TABELA DE BRINDE
-                                                        </label>
-                                                        <label for="three">
-                                                            <input type="checkbox" id="three"/>TABELA DE BRINDE
-                                                        </label>                                                  
+                                        <!--body modal-->
+                                        <div class="body_modal">
+                                            <div class="nome-kit"><label for="">Nome do Kit:</label><input type="text"></div>
+                                            <div class="item-brinde">
+                                                <form action="">
+                                                    <div class="scrolllist">
+                                                        <div class="linha-list-brinde">
+                                                            <div class="colunas-list-brinde">
+                                                                <div class="fundo-cinza-k">
+                                                                    <div class="brindes-kit">
+                                                                        <label for="">Brinde:</label>
+                                                                        <input type="text" list="brindedokit" placeholder="Busque">
+                                                                    </div>
+                                                                    <datalist id="brindedokit">
+                                                                        <option value=""></option>
+                                                                    </datalist>
+                                                                    <div class="quantidade-brinde">
+                                                                        <label>01</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                                                                       
+                                                </form>
+
+                                                <div class="botao-adc-brinde">
+                                                    <button onclick="adicionaritem()">Adicionar</button>
                                                 </div>
                                             </div>
-                                        </form>
-                                    </label>
-                                </div>
-                                <div class="descricao-k">
-                                    <fieldset>
-                                        <legend>Descrição:</legend>
-                                        <textarea name="" id="" cols="40" rows="5" style="resize: none;"></textarea> 
-                                    </fieldset>
-                                </div> 
-                            </div>
-                            
-                            <!--botoes modal-->
-                            <div class="botoes-criar">
-                                <div id="cancelark">
-                                    <button onclick="fecharCriarkit()">Cancelar</button>
-                                </div>
-                                <div id="criark">
-                                    <button onclick="proximoCriarkit()">Criar</button>
-                                </div>
-                            </div>
+                                            <div class="descricao-k">
+                                                <fieldset>
+                                                    <legend>Descrição:</legend>
+                                                    <textarea name="" id="" cols="40" rows="5"
+                                                        style="resize: none;"></textarea>
+                                                </fieldset>
+                                            </div>
+                                        </div>
 
-                        </div>
-                    </div>
+                                        <!--botoes modal-->
+                                        <div class="botoes-criar">
+                                            <div id="cancelark">
+                                                <button onclick="fecharCriarkit()">Cancelar</button>
+                                            </div>
+                                            <div id="criark">
+                                                <button onclick="proximoCriarkit()">Criar</button>
+                                            </div>
+                                        </div>
 
-                    <div class="modal_criar_list" id="criar-list">
-                        <div class="modal_content_criar_lits"> 
-                        
-                            <div class="head_modal_list">
-                                <div class="titulos-modal-k">
-                                    <h2 class="titulok-modal">Criar Kit</h2>
-                                    <p>Selecione os Brindes que compõe o Kit</p>
-                                </div>
-                                <div class="fechar-k-list">
-                                    <a href="">x</a>
-                                </div>
-                            </div>
-
-                            <div class="body_modal_list">
-                                
-                                <div class="list-modal">
-                                    <div class="titulok-list">
-                                        <label>Brinde 01: </label>
-                                    </div>
-                                    <div class="list-brinde">
-                                        <input type="checkbox" id="lista-kits" name="lista-kits" checked>
-                                        <label for="lista-kits">BANCO DE DADOS</label>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="botoes-criar-list">
-                                <div id="voltark-list">
-                                    <button onclick="voltarkit('.modal_add_item_3')">Voltar</button>
-                                </div>
-                                <div id="salvark-list">
-                                    <button onclick="salvarkit('.modal_criar_list')">Salvar</button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    
-                    <div class="modal_inativar_item" id="inativar-kit">
-                        <div class="modal_content_inativar">
-                            <div class="msg-inativar">
-                                <h2>Tem certeza que deseja inativar este item?</h2>
-                            </div>
-    
-                            <div class="botoes-inativar">
-                                <div id="cancelar-item">
-                                    <button onclick="fecharModalInativaritem()">Cancelar</button>
-                                </div>
-                                <div id="salvar-inativar-item">
-                                    <button onclick="('')">Salvar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="modal_saida_kit" id="saida-kit">
-                        <div class="modal_content_saida">
-                            <div class="titulos-modal-k">
-                                <h2 class="titulok-modal">Saida de Kit</h2>
-                                <p>Kit para comemorar os 10 anos da empresa</p>
-                            </div>
-
-                            <div class="body_modal_saida">
-                                
-                                <div class="modal_saida">
-                                    <div>
-                                        <label>Quantidade:</label>
-                                        <input type="text" placeholder="00">
-                                    </div>
-
-                                    <div class="saida-kit-data">
-                                        <label>Data:</label>
-                                        <input type="date">
                                     </div>
                                 </div>
 
-                                <div class="observacao-saida">
-                                    <fieldset>
-                                        <legend>Observações:</legend>
-                                        <textarea name="" id="" cols="40" rows="3" style="resize: none;"></textarea> 
-                                    </fieldset>
+                                <div class="modal_criar_list" id="criar-list">
+                                    <div class="modal_content_criar_lits">
+
+                                        <div class="head_modal_list">
+                                            <div class="titulos-modal-k">
+                                                <h2 class="titulok-modal">Criar Kit</h2>
+                                                <p>Visualize o Kit</p>
+                                            </div>
+                                            <!-- <div class="fechar-k-list">
+                                                <a href="">x</a>
+                                            </div> -->
+                                        </div>
+
+                                        <div class="body_modal_list">
+                                            
+                                            <div class="kit-montado">
+                                                <div class="scrooldavisualizacaokit">
+                                                    <div class="nomedokit-montado">
+                                                        <label><strong>Nome do Kit</strong></label>
+                                                    </div>
+                                                    <div class="listdosbrindes">
+                                                        <div class="scrooldalistbrinde">
+                                                            <div class="itembrinde-list">
+                                                                <input type="checkbox" id="lista-kits" name="lista-kits" checked>
+                                                                <label for="lista-kits">BANCO DE DADOS</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="descricaodokit">
+                                                        <fieldset>
+                                                            <legend>Descrição:</legend>
+                                                            <textarea name="" id="" cols="40" rows="5" style="resize: none;"></textarea>
+                                                        </fieldset>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="botoes-criar-list">
+                                            <div id="voltark-list">
+                                                <button onclick="voltarkit('.modal_add_item_3')">Voltar</button>
+                                            </div>
+                                            <div id="salvark-list">
+                                                <button onclick="salvarkit('.modal_criar_list')">Salvar</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
                                 </div>
 
-                            </div>
-                            
-                            <div class="botoes-saida-kit">
-                                <div id="cancelar-saida">
-                                    <button onclick="fecharModalSaidaitem('')">Cancelar</button>
-                                </div>
-                                <div id="salvar-saida">
-                                    <button onclick="salvarSaida('')">Salvar</button>
-                                </div>
-                            </div>
+                                <div class="modal_inativar_item" id="inativar-kit">
+                                    <div class="modal_content_inativar">
+                                        <div class="msg-inativar">
+                                            <h2>Tem certeza que deseja inativar este item?</h2>
+                                        </div>
 
-                        </div>
-                    </div>
-
-                    <div class="modal_saida_msg" id="saida-kit">
-                        <div class="modal_content_saida_msg">
-                            <div class="msg-saida">
-                                <h2>Saída de kit registrada com sucesso</h2>
-                            </div>
-    
-                            <div class="botao-salvar-saida">
-                                <div id="ok-salvar-saida">
-                                    <button onclick="fecharaviso('')">Ok</button>
+                                        <div class="botoes-inativar">
+                                            <div id="cancelar-item">
+                                                <button onclick="fecharModalInativaritem()">Cancelar</button>
+                                            </div>
+                                            <div id="salvar-inativar-item">
+                                                <button onclick="('')">Salvar</button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
 
+                                <div class="modal_saida_kit" id="saida-kit">
+                                    <div class="modal_content_saida">
+                                        <div class="titulos-modal-k">
+                                            <h2 class="titulok-modal">Saida de Kit</h2>
+                                            <p>Kit para comemorar os 10 anos da empresa</p>
+                                        </div>
+
+                                        <div class="body_modal_saida">
+
+                                            <div class="modal_saida">
+                                                <div>
+                                                    <label>Quantidade:</label>
+                                                    <input type="text" placeholder="00">
+                                                </div>
+
+                                                <div class="saida-kit-data">
+                                                    <label>Data:</label>
+                                                    <input type="date">
+                                                </div>
+                                            </div>
+
+                                            <div class="observacao-saida">
+                                                <fieldset>
+                                                    <legend>Observações:</legend>
+                                                    <textarea name="" id="" cols="40" rows="3"
+                                                        style="resize: none;"></textarea>
+                                                </fieldset>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="botoes-saida-kit">
+                                            <div id="cancelar-saida">
+                                                <button onclick="fecharModalSaidaitem('')">Cancelar</button>
+                                            </div>
+                                            <div id="salvar-saida">
+                                                <button onclick="salvarSaida('')">Salvar</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="modal_saida_msg" id="saida-kit">
+                                    <div class="modal_content_saida_msg">
+                                        <div class="msg-saida">
+                                            <h2>Saída de kit registrada com sucesso</h2>
+                                        </div>
+
+                                        <div class="botao-salvar-saida">
+                                            <div id="ok-salvar-saida">
+                                                <button onclick="fecharaviso('')">Ok</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modal_editar" id="editar">
+                                    <div class="modal_content_editar">
+
+                                        <!--head modal-->
+                                        <div class="head_modal">
+                                            <h2 class="titulok-modal">Editar Kit</h2>
+                                        </div>
+
+                                        <!--body modal-->
+                                        <div class="body_modal">
+                                            <div class="nome-kit"><label for="">Nome do Kit:</label><input type="text"></div>
+                                            <div class="item-brinde">
+                                                <form action="">
+                                                    <div class="scrolllist">
+                                                        <div class="linha-list-brinde">
+                                                            <div class="colunas-list-brinde">
+                                                                <div class="fundo-cinza-k">
+                                                                    <div class="brindes-kit">
+                                                                        <label for="">Brinde:</label>
+                                                                        <input type="text" list="brindedokit" placeholder="Busque">
+                                                                    </div>
+                                                                    <datalist id="brindedokit">
+                                                                        <option value=""></option>
+                                                                    </datalist>
+                                                                    <div class="quantidade-brinde">
+                                                                        <label>01</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                                <div class="botao-adc-brinde">
+                                                    <button onclick="">Remover</button>
+                                                </div>
+                                            </div>
+                                            <div class="descricao-k">
+                                                <fieldset>
+                                                    <legend>Descrição:</legend>
+                                                    <textarea name="" id="" cols="40" rows="5"
+                                                        style="resize: none;"></textarea>
+                                                </fieldset>
+                                            </div>
+                                        </div>
+
+                                        <!--botoes modal-->
+                                        <div class="botoes-editar">
+                                            <div id="cancellk">
+                                                <button onclick="fecharEditarkit()">Cancelar</button>
+                                            </div>
+                                            <div id="salvark">
+                                                <button onclick="salvareditarkit()">Salvar</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </section>
+                        </tbody>
+
+                    </table>
+                </div>
             </main>
 
             <!-- mude o e coloque seu id com nome da sua tela -->
@@ -301,7 +375,7 @@
                     <button onclick="abrirCriarkit()">Novo</button>
                 </div>
             </div>
-           
+
             <!-- footer da pagina -->
             <div id="pe_kits">
                 <footer id="pe">
@@ -312,11 +386,17 @@
             </div>
         </div>
 
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
 
-        
+
     </body>
 
 </html>

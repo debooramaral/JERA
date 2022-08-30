@@ -188,12 +188,15 @@ tr td {
 tr button{
     background: none;
     border: none;
+    cursor: pointer;
+}
+.coluna0{
+    cursor: pointer;
 }
 tr:hover td {
     border-bottom: 2px solid var(--roxo);
 }
 /*linha expansiva*/
-
 .subRow td{
     border: 2px solid transparent;
     border-bottom: 2px solid transparent;
@@ -256,13 +259,10 @@ thead {
     overflow-y: auto;
     height: 95%;
 
-}
-#scroll-kits {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     width: 95%;
-    /* padding-left: 2%; */
 }
 #scroll-kits::-webkit-scrollbar {
     width: 10px;
@@ -277,7 +277,6 @@ thead {
     background-color: var(--verde);
     border-radius: 30px;
 }
-
 /*botões*/
 #botao_kits button{
     border-radius: 30px;
@@ -320,7 +319,7 @@ thead {
 /*MODAL--------------------------------------------------------*/
 
 /*fundo escuro*/
-.modal_criar, .modal_criar_list, .modal_inativar_item, .modal_saida_kit, .modal_saida_msg{
+.modal_criar_list, .modal_inativar_item, .modal_saida_kit, .modal_saida_msg{
     background: rgba(0, 0, 0, 0.3);
     position: fixed;
     top: 0;
@@ -331,12 +330,15 @@ thead {
     justify-content: center;
     align-items: center;
 }
-.modal_content_criar, .modal_content_criar_lits, .modal_content_inativar, .modal_content_saida, .modal_content_saida_msg{
+.modal_content_criar_lits, .modal_content_criar, .modal_content_criar_lits, .modal_content_inativar, .modal_content_saida, .modal_content_saida_msg{
     background: white;
-    width: 500px;
+    width: auto;
+    max-width: 768px;
     height: auto;
+    max-height: 700px;
+    padding: 1%;
     border-radius: 5px;
-    border: 2px solid var(--verde);
+    border: 2px solid var(--roxo);
 }
 /*---------------------------------------------------head*/
 .head_modal{
@@ -350,13 +352,12 @@ thead {
     color: var(--roxo);
     font-size: 16px;
     margin-top: 1%;
-    margin-bottom: 2%;
 }
 .descricao-k{
     background: white;
     margin-left: 3%;
     margin-right: 3%;
-    margin-bottom: 3%;
+    margin-bottom: 1%;
 }
 .descricao-k legend{
     padding-right: 10px;
@@ -379,17 +380,18 @@ thead {
     color: var(--roxo);
     font-size: 16px;
     margin-top: 1%;
-    margin-bottom: 2%;
+    margin-bottom: 3%;
 }
+/*botão de fechar modal*/
 .fechar-k-list a{
     text-decoration: none;
     color: var(--roxo);
 }
 .fechar-k-list{
-    position: relative;
-    width: 30px;
-    left: 80px;
-    top: -20px;
+    position: absolute;
+    display: flex;
+    top: 200px;
+    left: 70%;
     text-align: center;
     border-radius: 50%;
     font-size: 20px;
@@ -401,9 +403,10 @@ thead {
     flex-direction: column;
     justify-content: center;
     font-family: 'Montserrat', sans-serif;
+    margin-bottom: 2%;
 }
 .body_modal fieldset{
-    border: 2px solid var(--verde);
+    border: 2px solid var(--roxo);
     border-radius: 5px;
     justify-content: center;
 }
@@ -416,22 +419,19 @@ thead {
 .nome-kit{
     background: var(--cinza-input);
     border-radius: 5px;
-    margin-left: 3%;
-    margin-right: 3%;
-    margin-bottom: 3%;
+    margin-bottom: 1%;
+    padding-left: 5px;
 }
 .body_modal label{
     font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-    padding-left: 10px;
+    font-size: 20px;
 }
 .body_modal input{
     border: 0px solid transparent;
     border-radius: 5px;
     outline: transparent;
-    width: 60%;
     padding: 5px;
-    background: var(--cinza-input);
+    background: none;
     font-size: 20px;
 }
 .body_modal .descricao-k{
@@ -443,173 +443,204 @@ thead {
     outline: none;
     background: none;
     font-size: 20px;
-    padding: 3px 0 0 5px;
+    width: 99%;
+    padding: 3px;
 }
-/* multiselect*/
-.select-kits{
+
+/*ADICIONANDO ITEM no KIT-----------------------------------------*/
+
+/*base do modal, para dimensões fixas*/
+.modal_criar{
+    background: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.modal_content_criar{
+    background: white;
+    width: 768px;
+    height: 500px;
+    padding: 1%;
+    border-radius: 5px;
+    border: 2px solid var(--roxo);
+}
+/*area de visualização do item (brinde)*/
+.item-brinde{
+    border-radius: 5px;
+}
+.colunas-list-brinde{
+    margin-right: 1%;
+}
+.fundo-cinza-k{
     background: var(--cinza-input);
     border-radius: 5px;
-    margin-left: 3%;
-    margin-right: 3%;
+    padding-left: 5px;
     margin-bottom: 2%;
-}
-.select-kits label{
     display: flex;
-    margin-top: 1%;
-    font-size: 18px;
+    align-items: center;
+    width: 360px;
 }
-.multiselect {
-    width: 200px;
+.quantidade-brinde label{
+    color: var(--roxo);
 }
-.selectBox {
-    position: relative;
-}
-.selectBox select {
-    width: 195%;
-    margin-bottom: 3%;
-    margin-left: 3%;
-    font-size: 15px;
-    font-weight: lighter;
-    text-align: center;
-    color: #9E9E9E;
-    border: none;
-    background: none;
-}
-.overSelect {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 195%;
-    background: none;
-}
-#checkboxes {
-    display: none;
-    width: 195%;
+/*scroll da lista de brindes*/
+.scrolllist{
     height: 100px;
-    margin-top: 0px;
-    margin-left: 3%;
-    margin-bottom: 1.5%;
+    width: 99%;
 }
-#checkboxes label {
-    display: block;
-}
-#checkboxes input{
-    width: 10%;    
-}
-#checkboxes label:hover {
-    background-color: var(--roxo-claro);
-    border-radius: 5px;
-}
-/*scroll bar lista brindes*/
-.scrolagem{
+.linha-list-brinde{
     overflow-x: hidden;
     overflow-y: auto;
     height: 95%;
-    width: 98%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
 }
-.scrolagem::-webkit-scrollbar {
+.linha-list-brinde::-webkit-scrollbar {
     width: 10px;
 }
-.scrolagem::-webkit-scrollbar-track {
+.linha-list-brinde::-webkit-scrollbar-track {
     background-color: var(--cinza);
     border-radius: 30px;
     height: 100px;
     border: 1px solid var(--verde);
 }
-.scrolagem::-webkit-scrollbar-thumb {
+.linha-list-brinde::-webkit-scrollbar-thumb {
     background-color: var(--verde);
     border-radius: 30px;
 }
-
-/*---------------------------------------------------botões modal (TODOS)*/
-.botoes-criar, .botoes-criar-list, .botoes-inativar, .botoes-saida-kit{
+/*botão da lista de brindes*/
+.botao-adc-brinde{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-bottom: 5%;
+    margin-bottom: 1%;
+    margin-top: 1%;
 }
-.botoes-criar button, .botoes-criar-list button, .botoes-inativar button, .botoes-saida-kit button{
+.botao-adc-brinde button{
+    border-radius: 30px;
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    font-family: var(--font-paragrafo);
+
+    border: 2px solid var(--verde);
+    color: var(--verde);
+    background: none;
+    transition: all .4s ease-in;
+}
+.botao-adc-brinde button:hover{
+    background: var(--verde);
+    color: var(--branco);
+    cursor: pointer;
+    transition: all .4s ease-in;
+}
+/*---------------------------------------------------botões modal (TODOS)*/
+.botoes-criar, .botoes-criar-list, .botoes-inativar, .botoes-saida-kit, .botoes-editar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.botoes-criar button, .botoes-criar-list button, .botoes-inativar button, .botoes-saida-kit button, .botoes-editar button{
     border-radius: 30px;
     width: 150px;
     height: 40px;
     font-size: 20px;
     font-family: var(--font-paragrafo);
 }
-#cancelark button, #voltark button, #voltark-list button, #cancelar-item button, #cancelar-saida button{
+#cancelark button, #voltark button, #voltark-list button, #cancelar-item button, #cancelar-saida button, #cancellk button{
     border: 2px solid var(--roxo);
     color: var(--roxo);
     background: none;
 }
-
-#cancelark button:hover, #voltark button:hover, #voltark-list button:hover, #cancelar-item button:hover, #cancelar-saida button:hover{
+#cancelark button:hover, #voltark button:hover, #voltark-list button:hover, #cancelar-item button:hover, #cancelar-saida button:hover, #cancellk button:hover{
     background: var(--roxo);
     color: var(--branco);
     cursor: pointer;
     transition: all .4s ease-in;
 }
-
-#criark button, #proximok button, #salvark-list button, #salvar-inativar-item button, #salvar-saida button{
+#criark button, #proximok button, #salvark-list button, #salvar-inativar-item button, #salvar-saida button, #salvark button{
     border: 2px solid var(--verde);
     color: var(--verde);
     background: none;
     transition: all .4s ease-in;
 }
-#criark button:hover, #proximok button:hover, #salvark-list button:hover, #salvar-inativar-item button:hover, #salvar-saida button:hover{
+#criark button:hover, #proximok button:hover, #salvark-list button:hover, #salvar-inativar-item button:hover, #salvar-saida button:hover, #salvar button:hover{
     background: var(--verde);
     color: var(--branco);
     cursor: pointer;
     transition: all .4s ease-in;
 }
-
 /*MODAL list--------------------------------------------------------*/
-
 .body_modal_list{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     font-family: 'Montserrat', sans-serif;
 }
-.list-modal{
-    background: var(--cinza-input);
+.nomedokit-montado{
+    border: 1px solid var(--cinza-input);
     border-radius: 5px;
-    padding: 2%;
-    height: 20vh;
-    width: 80%;
-    margin: 3%;
+    background: var(--cinza-input);
+    padding: 5px;
+    margin: 1%;
+    align-items: center;
+    text-align: center;
 }
-.titulok-list{
-    display: flex;
-    border-bottom: 1px solid var(--cinza-inativo);
+.itembrinde-list{
+    margin: 1%;
+    border: 1px solid var(--cinza-input);
+    border-radius: 5px;
+    background: var(--cinza-input);
+    padding: 5px;
 }
-.titulok-list label{
-    margin-bottom: 1%;
+.descricaodokit fieldset{
+    border: 2px solid var(--roxo);
+    border-radius: 5px;
+    justify-content: center;
+    margin-bottom: 3%;
 }
-.list-brinde{
-    margin-top: 1%;
+.descricaodokit legend{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    margin-left: 10px;
+    width: 87px;
+    padding-right: 2%;
 }
-.list-modal{
+.descricaodokit textarea{
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 20px;
+    width: 99%;
+    padding: 3px;
+}
+/*scroll da visualização do kit MONTADO*/
+.scrooldalistbrinde{
     overflow: auto;
     max-height: 95%;
     min-height: 20%;
 }
-.list-modal::-webkit-scrollbar{
+.scrooldalistbrinde::-webkit-scrollbar{
     width: 10px;
     height: 0px;
 }
-.list-modal::-webkit-scrollbar-track{
+.scrooldalistbrinde::-webkit-scrollbar-track{
     background-color: var(--cinza);
     border-radius: 30px;
     height: 100px;
     border: 1px solid var(--verde);
 }
-.list-modal::-webkit-scrollbar-thumb{
+.scrooldalistbrinde::-webkit-scrollbar-thumb{
     background-color: var(--verde);
     border-radius: 30px;
 }
-
 /*MODAL inativar item-----------------------------------------------------*/
-
 .msg-inativar, .msg-saida{
     text-align: center;
     display: flex;
@@ -618,7 +649,6 @@ thead {
     margin-top: 5%;
     width: auto;
 }
-
 /*MODAL saida item-----------------------------------------------------*/
 .modal_saida div{
     background: var(--cinza-input);
@@ -654,12 +684,10 @@ thead {
 }
 .observacao-saida{
     background: white;
-    margin-left: 3%;
-    margin-right: 3%;
     margin-bottom: 3%;
 }
 .observacao-saida fieldset{
-    border: 2px solid var(--verde);
+    border: 2px solid var(--roxo);
     border-radius: 5px;
     justify-content: center;
 }
@@ -678,7 +706,6 @@ thead {
     font-size: 20px;
     padding: 3px 0 0 5px;
 }
-
 .botao-salvar-saida{
     display: flex;
     justify-content: space-around;
@@ -703,6 +730,29 @@ thead {
     cursor: pointer;
     transition: all .4s ease-in;
 }
+
+/*MODAL Editar -----------------------------------------------------*/
+.modal_editar{
+    background: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.modal_content_editar{
+    background: white;
+    width: 768px;
+    height: 470px;
+    padding: 1%;
+    border-radius: 5px;
+    border: 2px solid var(--roxo);
+}
+
+
 /* FOOTER */
 #pe_kits{
     grid-area:footer;
