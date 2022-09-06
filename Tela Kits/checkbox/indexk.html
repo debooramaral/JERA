@@ -1,0 +1,436 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap dropdown -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilok.css">
+    <!--icone da pagina-->
+    <link rel="icon" type="image/x-icon" href="../imgs/brinde-kits.svg">
+    <!--java script linha expansiva e MODAL-->
+    <script src="../scriptk.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Kits</title>
+</head>
+
+<body>
+
+    <body>
+        <iframe src="../sidebar/index.html"></iframe>
+        <div class="container-fluid">
+            <!-- mude o e coloque seu id -->
+            <div id="titulo_kits">
+                <h1>Kits</h1>
+
+                <div id="pesquisar">
+                    <div id="pesq">
+                        <div>
+                            <button id="icon" href="#"><img src="../kits5.1/imgs/twotone_search_black_24dp.png" alt=""></button>
+                        </div>
+                        <div>
+                            <input id="input-pesq" placeholder="Pesquisar" type="text" onkeyup="searchTableColumns()">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- mude o e coloque seu id -->
+            <main id="main-kits">
+                <div id="scroll-kits">
+                    <!-- mude o e coloque seu id com nome de sua tabela-->
+                    <table id="kits">
+                        <thead>
+                            <tr>
+                                <th scope="col">Objeto</th>
+                                <th scope="col">Descrição</th>
+                                <th scope="col">Quantidade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        <!-- refazer a tabela em JAVA SCRIPT e ver ele funcionando aqui. Porém não apagar para utilziar a estrutura do HTML // https://github.com/anderson-scr/hub-help/tree/main/Ocorrencias -->
+
+
+                            <!--linha normal-->
+                            <tr id="linha_k" name="linha_k" class="parentRow" onclick="showHideRow('linha_1');">
+                                <td class="nome-l"><button href="#" id="editar_kits"><img id="img-editar"
+                                            src="../imgs/editar.svg"></button>Aniversariante</td>
+                                <td class="descriçao-l" id="coluna-descriçao">Kit para aniversario de 01 ano</td>
+                                <td class="quantidade-l">23</td>
+                            </tr>
+
+                            <!--           A T E N Ç Ã O        definir espaçamento do lapis (botão editar) -->
+
+                            <!--linha  expansiva-->
+                            <tr id="linha_1" class="subRow" style="display: none;">
+                                <td colspan="3" id="linha_e" name="linha_e">
+                                    <div class="iten-kit">
+                                        <!--informação que vem do banco de dados a partir da tabela de brindes-->
+                                        <div>
+                                            <p><span class="ponto-kits">•</span>Agenda da Jera<span class="qtdd-brinde-kits">(32)</span></p>
+                                        </div>
+                                        <div>
+                                            <p><span class="ponto-kits">•</span>Caneta da Jera <span class="qtdd-brinde-kits">(23)</span></p>
+                                        </div>  
+                                        <div>
+                                            <p><span class="ponto-kits">•</span>Cartão de Mensagem <span class="qtdd-brinde-kits">(1)</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="btn-kit">
+                                        <p><a href="#">Inativar Item</a></p>
+                                        <p><a href="#">Saída</a></p>
+                                    </div>
+                                </td>
+                            </tr>
+
+
+                        <!--Fim da área onde o JAVA SCRIPT vai rodar-->
+
+
+                    </table>
+                </div>
+
+                <section class="modal-kits">
+
+                    <div class="modal_criar" id="criar">
+                        <div class="modal_content_criar">
+
+                            <!--head modal-->
+                            <div class="head_modal_1">
+                                <h2 class="titulok-modal">Criar Kit</h2>
+                                <p>Selecione os Brindes que compõe o Kit</p>
+                            </div>
+
+                            <!--body modal-->
+                            <div class="body_modal">
+                                <div><label for="">Nome: </label><input type="text"></div>
+                                <div>
+                                    <label for="">Brinde: </label>
+                                    <input type="text">
+                                    <div class="list-checkbox-brindes">
+                                        <div class="colunas-list-checkbox">
+                                            <form action="">
+                                                <ul class="selecao-list">
+                                                    <li>
+                                                        <div>
+                                                            <input type="checkbox" name="" id="">
+                                                        </div>
+                                                        <label for="">bone jera bone jera</label>
+                                                    </li>
+                                                    <li>
+                                                        <div>
+                                                            <input type="checkbox" name="" id="">
+                                                        </div>
+                                                        <label for="">boneAjeraBboneCjeraD boneAjeraBboneCjeraD</label>
+                                                    </li>
+                                                    <li>
+                                                        <div>
+                                                            <input type="checkbox" name="" id="">
+                                                        </div>
+                                                        <label for="">bone jera bone jera</label>
+                                                    </li>
+                                                    <li>
+                                                        <div>
+                                                            <input type="checkbox" name="" id="">
+                                                        </div>
+                                                        <label for="">bone jera bone jera</label>
+                                                    </li>
+                                                    <li>
+                                                        <div>
+                                                            <input type="checkbox" name="" id="">
+                                                        </div>
+                                                        <label for="">boneAjeraBboneCjeraD</label>
+                                                    </li>
+                                                    <li>
+                                                        <div>
+                                                            <input type="checkbox" name="" id="">
+                                                        </div>
+                                                        <label for="">boneAjeraBboneCjeraD</label>
+                                                    </li>
+                                                </ul>
+
+                                                <ul class="selecao-list">
+                                                    <li>
+                                                        <div>
+                                                            <input type="checkbox" name="" id="">
+                                                        </div>
+                                                        <label for="">bone jera bone jera</label>
+                                                    </li>
+                                                    <li>
+                                                        <div>
+                                                            <input type="checkbox" name="" id="">
+                                                        </div>
+                                                        <label for="">boneAjeraBboneCjeraD</label>
+                                                    </li>
+                                                    <li>
+                                                        <div>
+                                                            <input type="checkbox" name="" id="">
+                                                        </div>
+                                                        <label for="">bone jera bone jera</label>
+                                                    </li>
+                                                    <li>
+                                                        <div>
+                                                            <input type="checkbox" name="" id="">
+                                                        </div>
+                                                        <label for="">bone jera bone jera</label>
+                                                    </li>
+                                                    <li>
+                                                        <div>
+                                                            <input type="checkbox" name="" id="">
+                                                        </div>
+                                                        <label for="">boneAjeraBboneCjeraD</label>
+                                                    </li>
+                                                    <li>
+                                                        <div>
+                                                            <input type="checkbox" name="" id="">
+                                                        </div>
+                                                        <label for="">boneAjeraBboneCjeraD</label>
+                                                    </li>
+                                                </ul>
+
+                                                <div class="btn-checkbox">
+                                                    <button>Confirma</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="descricao1-k">
+                                    <fieldset>
+                                        <legend>Descrição:</legend>
+                                        <textarea name="" id="" cols="40" rows="5" style="resize: none;"></textarea> 
+                                    </fieldset>
+                                </div> 
+                            </div>
+                            
+                            <!--botoes modal-->
+                            <div class="botoes-criar">
+                                <div id="cancelark">
+                                    <button class="btn_cancelark" id="cancelar" onclick="fecharCriarkit('modal_criar')">Cancelar</button>
+                                </div>
+                                <div id="criark">
+                                    <button class="btn_criark" id="criar" onclick="proximoCriarkit('.modal_add_item')">Criar</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="modal_add_item" id="additem">
+                        <div class="modal_content_add_item">
+
+                            <!--head modal-->
+                            <div class="head_modal">
+                                <div class="titulos-modal-k">
+                                    <h2 class="titulok-modal">Criar Kit</h2>
+                                    <p>Selecione os Brindes que compõe o Kit</p>
+                                </div>
+                                <div class="fechar-k">
+                                    <a href="">x</a>
+                                </div>
+                            </div>
+
+                            <!--body modal-->
+                            <div class="body_modal">
+                                <div><label for="">Nome: </label><input type="text"></div>
+                                <div class="dropdown">
+                                    <button class="brinde-k dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Brinde:
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <div>
+                                            <input type="checkbox" name="" id="">Bone Bone Bone Bone
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" name="" id="">Bone Bone Bone Bone
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" name="" id="">Bone Bone Bone Bone
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" name="" id="">Bone Bone Bone Bone
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" name="" id="">Bone Bone Bone Bone
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dropdown">
+                                    <button class="brinde-k dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Brinde 02:
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <li value="1"><a class="dropdown-item" href="#">()</a></li>
+                                        <li value="2"><a class="dropdown-item" href="#">()</a></li>
+                                        <li value="3"><a class="dropdown-item" href="#">()</a></li>
+                                    </div>
+                                </div>
+                                <!-- <div><label for="">Brinde: </label><select name="" id=""></select></div>
+                                <div class="linhamodal-brinde-k"><label for="">Brinde 02: </label><select name="" id=""></select></div> -->
+                                <div class="descricao2-k">
+                                    <fieldset>
+                                        <legend>Descrição:</legend>
+                                        <textarea name="" id="" cols="40" rows="5" style="resize: none;"></textarea> 
+                                    </fieldset>
+                                </div>
+                            </div>
+                            
+                            <!--botoes modal-->
+                            <div class="botoes-additem">
+                                <div id="voltark">
+                                    <button class="btn_voltark" id="voltar" onclick="abrirCriarkit('modal_criar')">Voltar</button>
+                                </div>
+                                <div id="proximok">
+                                    <button class="btn_proximok" id="proximo" onclick="proximoCriarkit3('.modal_add_item_3')">Próximo</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                    <div class="modal_add_item_3" id="additem_3">
+                        <div class="modal_content_add_item_3">
+
+                            <!--head modal-->
+                            <div class="head_modal">
+                                <div class="titulos-modal-k">
+                                    <h2 class="titulok-modal">Criar Kit</h2>
+                                    <p>Selecione os Brindes que compõe o Kit</p>
+                                </div>
+                                <div class="fechar-k">
+                                    <a href="">x</a>
+                                </div>
+                            </div>
+
+                            <!--body modal-->
+                            <div class="body_modal">
+                                <div><label for="">Nome: </label><input type="text"></div>
+                                <div class="dropdown">
+                                    <button class="brinde-k dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Brinde:
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <li value="1"><a class="dropdown-item" href="#">()</a></li>
+                                        <li value="2"><a class="dropdown-item" href="#">()</a></li>
+                                        <li value="3"><a class="dropdown-item" href="#">()</a></li>
+                                    </div>
+                                </div>
+                                <div class="dropdown">
+                                    <button class="brinde-k-2 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Brinde 02:
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <!-- <li value="1"><a class="dropdown-item" href="#">()</a></li>
+                                        <li value="2"><a class="dropdown-item" href="#">()</a></li>
+                                        <li value="3"><a class="dropdown-item" href="#">()</a></li> -->
+                                        <input type="checkbox" name="" id="">
+                                        <input type="checkbox" name="" id="">
+                                        <input type="checkbox" name="" id="">
+                                    </div>
+                                </div>
+                                <div class="dropdown">
+                                    <button class="brinde-k-3 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Brinde 03:
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <li value="1"><a class="dropdown-item" href="#"><a href="">()</a></a></li>
+                                        <li value="2"><a class="dropdown-item" href="#"><a href="">()</a></a></li>
+                                        <li value="3"><a class="dropdown-item" href="#"><a href="">()</a></a></li>
+                                    </div>
+                                </div>
+                                <div class="descricao2-k">
+                                    <fieldset>
+                                        <legend>Descrição:</legend>
+                                        <textarea name="" id="" cols="40" rows="5" style="resize: none;"></textarea> 
+                                    </fieldset>
+                                </div>
+                            </div>
+                            
+                            <!--botoes modal-->
+                            <div class="botoes-additem-3">
+                                <div id="voltark-3">
+                                    <button class="btn_voltark_3" id="voltar" onclick="proximoCriarkit('.modal_add_item_3') ">Voltar</button>
+                                </div>
+                                <div id="proximok-3">
+                                    <button class="btn_proximok_3" id="proximo" onclick="salvarkit('.modal')">Próximo</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="modal_criar_list" id="criar-list">
+                        <div class="modal_content_criar_lits"> 
+                        
+                            <div class="head_modal_list">
+                                <div class="titulos-modal-k">
+                                    <h2 class="titulok-modal">Criar Kit</h2>
+                                    <p>Selecione os Brindes que compõe o Kit</p>
+                                </div>
+                                <div class="fechar-k-list">
+                                    <a href="">x</a>
+                                </div>
+                            </div>
+
+                            <div class="body_modal_list">
+                                
+                                <div class="list-modal">
+                                    <div class="titulok-list">
+                                        <label>Brinde 01: </label>
+                                    </div>
+                                    <div class="list-brinde">
+                                        <input type="checkbox" id="lista-kits" name="lista-kits" checked>
+                                        <label for="lista-kits">Bone Jera</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="botoes-criar-list">
+                                <div id="voltark-list">
+                                    <button class="btn_voltar_list" id="voltar-list" onclick="voltarkit('.modal_add_item_3')">Voltar</button>
+                                </div>
+                                <div id="salvark-list">
+                                    <button class="btn_salvar_list" id="salvar-list" onclick="salvarkit('.modal_criar_list')">Salvar</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                </section>
+
+            </main>
+
+            <!-- mude o e coloque seu id com nome da sua tela -->
+            <div id="botao_kits">
+                <div id="botaorelatorio_k">
+                    <button>Relatório</button>
+                </div>
+                <div id="botaonovo_k">
+                    <button onclick="abrirCriarkit('modal_criar')">Novo</button>
+                </div>
+            </div>
+           
+            <!-- footer da pagina -->
+            <div id="pe_kits">
+                <footer id="pe">
+                    <p id="ano-designedBy"> 2022 | Designed By&nbsp;</p>
+                    <a href="#" class="fabricaSoftware">Fábrica de Software T.57&#160;</a>
+                    <a href="https://www.ms.senac.br/" target="_blank" class="fabricaSoftware">Senac MS</a>
+                </footer>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+
+</html>
