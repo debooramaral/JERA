@@ -1,14 +1,10 @@
 <?php
-//include("./raiz/conection.php");
 
 //Tabela dinamica
 require_once("./raiz/tabela/mostrar.php"); //botao novo, adicionando linha na tabela
 $mostrarregistro = new preenchertabelas;
 
-//Item do modal de criar kit
-require_once("./raiz/modais/brindesdokit.php");
-$adcbrindesnokit = new adcBrinde;
-
+include("./raiz/conection.php");
 
 ?>
 
@@ -35,9 +31,9 @@ $adcbrindesnokit = new adcBrinde;
 
     <body>
         <iframe src="../sidebar/index.php"></iframe>
-        
         <div class="container">
             <!-- mude o e coloque seu id -->
+
             <div id="titulo_kits">
                 <h1>Kits</h1>
 
@@ -113,45 +109,56 @@ $adcbrindesnokit = new adcBrinde;
                                         <!--body modal-->
                                         <div class="body_modal">
                                             <form method="POST" action="../banco de dados/raiz/modais/criarkit.php">
-                                                <div class="nome-e-qtdd">
-                                                    <div class="nome-kit"><label for="">Nome do Kit:</label><input type="text" name="nomeKit"></div>
-                                                    <div class="qtdd-kit"><label for="">Quantidade:</label><input type="number" name="qtddKit"></div>
-                                                </div>
+                                                <div class="nome-kit"><label for="">Nome do Kit:</label><input type="text" name="nomeKit"></div>
+                                                <form action="">
+                                               
+                                                    <div class="item-brinde">
+                                                        <div class="scrolllist">
+                                                            <div class="linha-list-brinde">
+                                                                <div class="colunas-list-brinde">
+                                                                    <div class="fundo-cinza-k">
+                                                                        <div class="brindes-kit">
+                                                                            <label for="">Brinde:</label>
+                                                                            <input type="text" list="brindedokit" placeholder="Encontre o Objeto" name="brindeKit">
+                                                                        </div>
+                                                                        <datalist id="brindedokit">
+                                                                            <?php
+                                                                                $listbrinde = "select objeto_brinde.nome_objeto_brinde, brinde.descricao, brinde.quantidade from brinde inner join objeto_brinde on brinde.fk_objeto_brinde = objeto_brinde.id_objeto_brinde";
+                                                                                $result = mysqli_query($con, $listbrinde);
 
-                                                <div class="item-brinde">
-                                                    <div class="scrolllist">
-                                                        <div class="linha-list-brinde">
-                                                            <div class="colunas-list-brinde">
-                                                                <div class="fundo-cinza-k">
-                                                                    <div class="brindes-kit">
-                                                                        <label for="">Brinde:</label>
-                                                                        <input type="text" list="brindedokit" placeholder="Encontre o Brinde" name="brindeKit">
-                                                                    </div>
-                                                                    
-                                                                    <form action="">
-                                                                        <?php //$adcbrindesnokit -> criandoKit(); ?> 
-                                                                    </form>
+                                                                                while($data = mysqli_fetch_array($result)){
+                                                                                    ?>
+                                                                                        <option value="<?php
+                                                                                            //$valor = $data['nome_objeto_brinde', 'descricao', 'quantidade'];
+                                                                                            foreach(array_unique ($data) as $value){
+                                                                                                echo "$value\n";
+                                                                                            }
+                                                                                        ?>"></option>
+                                                                                    <?php
+                                                                                }
+                                                                            ?>
+                                                                        </datalist>
 
-                                                                    <div class="quantidade-brinde">
-                                                                        <input type="number" name="qtdd-brinde">
+                                                                        <div class="quantidade-brinde">
+                                                                            <input type="number" placeholder="10" name="qtdd-brinde">
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
+
+                                                    </form>
+                                                    <div class="botao-adc-brinde">
+                                                        <button onclick="adicionaritem()">Adicionar</button>
                                                     </div>
                                                 </div>
-                                                
-                                                <div class="botao-adc-brinde">
-                                                    <button onclick="adicionaritem()">Adicionar</button>
-                                                </div>
-
                                                 <div class="descricao-k">
                                                     <fieldset>
                                                         <legend>Descrição:</legend>
                                                         <textarea name="descricaoKit" cols="40" rows="5" style="resize: none;"></textarea>
                                                     </fieldset>
                                                 </div>
-
+                                        </div>
                                                 <!--botoes modal-->
                                                 <div class="botoes-criar">
                                                     <div id="cancelark">
@@ -162,8 +169,6 @@ $adcbrindesnokit = new adcBrinde;
                                                     </div>
                                                 </div>
                                             </form>
-                                        </div>
-
                                     </div>
                                 </div>
 
@@ -176,8 +181,8 @@ $adcbrindesnokit = new adcBrinde;
                                                 <p>Visualize o Kit</p>
                                             </div>
                                             <!-- <div class="fechar-k-list">
-                                                                <a href="">x</a>
-                                                            </div> -->
+                                                <a href="">x</a>
+                                            </div> -->
                                         </div>
 
                                         <div class="body_modal_list">
@@ -300,8 +305,8 @@ $adcbrindesnokit = new adcBrinde;
                                                 <p>Visualize o Kit</p>
                                             </div>
                                             <!-- <div class="fechar-k-list">
-                                                                <a href="">x</a>
-                                                            </div> -->
+                                                <a href="">x</a>
+                                            </div> -->
                                         </div>
 
                                         <div class="body_modal_list">
@@ -371,8 +376,8 @@ $adcbrindesnokit = new adcBrinde;
                                 </div>
 
                             </section>
-
                         </tbody>
+
                     </table>
                 </div>
             </main>
@@ -400,6 +405,7 @@ $adcbrindesnokit = new adcBrinde;
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 
     </body>
 

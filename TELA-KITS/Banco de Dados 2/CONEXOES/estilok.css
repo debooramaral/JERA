@@ -417,12 +417,23 @@ thead {
     margin-left: 10px;
     width: 87px;
 }
-.nome-kit{
+.nome-e-qtdd{
+    display: flex;
+    justify-content: space-between;
+}
+.nome-kit, .qtdd-kit{
     background: var(--cinza-input);
     border-radius: 5px;
     margin-bottom: 1%;
     padding: 5px;
     height: 30px;
+}
+.nome-kit{
+    width: 74%;
+}
+.qtdd-kit input{
+    width: 45px;
+    color: var(--roxo);
 }
 .body_modal label{
     font-family: 'Montserrat', sans-serif;
@@ -488,9 +499,17 @@ thead {
     width: 360px;
     height: 35px;
 }
-.quantidade-brinde label{
+.fundo-cinza-k input{
+    width: 73%;
+}
+.quantidade-brinde{
+    display: flex;
+}
+.quantidade-brinde input{
+    width: 45px;
     color: var(--roxo);
 }
+
 /*scroll da lista de brindes*/
 .scrolllist{
     height: 100px;
@@ -743,8 +762,6 @@ thead {
 }
 
 /*MODAL Editar -----------------------------------------------------*/
-
-
 
 /* FOOTER */
 #pe_kits{
