@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--icone da pagina-->
-    <link rel="icon" type="image/x-icon" href="../imgs/brinde-kits.svg">
+    <link rel="icon" type="image/x-icon" href="./imgs/brinde-kits.svg">
     <!-- fonte -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <!--java script linha expansiva e MODAL-->
@@ -22,7 +22,7 @@
 <body>
 
     <body>
-        <iframe src="../sidebar/index.html"></iframe>
+        <iframe src="./sidebar/index.html"></iframe>
         <div class="container">
             <!-- mude o e coloque seu id -->
 
@@ -32,7 +32,7 @@
                 <div id="pesquisar">
                     <div id="pesq">
                         <div>
-                            <button id="icon" href="#"><img src="../imgs/twotone_search_black_24dp.png" alt=""></button>
+                            <button id="icon" href="#"><img src="./imgs/twotone_search_black_24dp.png" alt=""></button>
                         </div>
                         <div>
                             <input id="input-pesq" placeholder="Pesquisar" type="text" onkeyup="searchTableColumns()">
@@ -61,7 +61,7 @@
                                 <!-- coluna editar -->
                                 <td class="colunas">
                                     <div class="conteudo coluna0">
-                                        <button class="btn_editar" onclick="abrirEditarKit()"><img src="../imgs/editar.svg" alt="editar" onclick="openModal('.modal')"></button>
+                                        <button class="btn_editar" onclick="abrirEditarKit()"><img src="./imgs/editar.svg" alt="editar" onclick="openModal('.modal')"></button>
                                     </div>
                                 </td>
 
@@ -127,45 +127,40 @@
 
                                         <!--body modal-->
                                         <div class="body_modal">
-                                            <form action="" id="formcriar">
-                                                <div class="nome-e-qtdd">
-                                                    <div class="nome-kit"><label for="">Nome do Kit:</label><input type="text"></div>
-                                                    <div class="qtdd-kit"><label for="">Quantidade:</label><input type="number"></div>
-                                                </div>
-                                                <div class="item-brinde">
-                                                    <form action="">
-                                                        <div class="scrolllist">
-                                                            <div class="linha-list-brinde">
-                                                                <div class="colunas-list-brinde">
-                                                                    <div class="fundo-cinza-k">
-                                                                        <div class="brindes-kit">
-                                                                            <label for="">Brinde:</label>
-                                                                            <input type="text" list="brindedokit" placeholder="Busque">
-                                                                        </div>
-                                                                        <datalist id="brindedokit">
-                                                                            <option value=""></option>
-                                                                        </datalist>
-                                                                        <div class="quantidade-brinde">
-                                                                            <input type="number" name="qtdd-brinde">
-                                                                        </div>
+                                            <div class="nome-kit"><label for="">Nome do Kit:</label><input type="text"></div>
+                                            <div class="item-brinde">
+                                                <form action="">
+                                                    <div class="scrolllist">
+                                                        <div class="linha-list-brinde">
+                                                            <div class="colunas-list-brinde">
+                                                                <div class="fundo-cinza-k">
+                                                                    <div class="brindes-kit">
+                                                                        <label for="">Brinde:</label>
+                                                                        <input type="text" list="brindedokit" placeholder="Busque">
+                                                                    </div>
+                                                                    <datalist id="brindedokit">
+                                                                        <option value=""></option>
+                                                                    </datalist>
+                                                                    <div class="quantidade-brinde">
+                                                                        <label>01</label>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </form>
-    
-                                                    <div class="botao-adc-brinde">
-                                                        <button onclick="adicionaritem()">Adicionar</button>
                                                     </div>
+                                                </form>
+
+                                                <div class="botao-adc-brinde">
+                                                    <button onclick="adicionaritem()">Adicionar</button>
                                                 </div>
-                                                <div class="descricao-k">
-                                                    <fieldset>
-                                                        <legend>Descrição:</legend>
-                                                        <textarea name="" id="" cols="40" rows="5"
-                                                            style="resize: none;"></textarea>
-                                                    </fieldset>
-                                                </div>
-                                            </form>
+                                            </div>
+                                            <div class="descricao-k">
+                                                <fieldset>
+                                                    <legend>Descrição:</legend>
+                                                    <textarea name="" id="" cols="40" rows="5"
+                                                        style="resize: none;"></textarea>
+                                                </fieldset>
+                                            </div>
                                         </div>
 
                                         <!--botoes modal-->
@@ -199,7 +194,7 @@
                                             <div class="kit-montado">
                                                 <div class="scrooldavisualizacaokit">
                                                     <div class="nomedokit-montado">
-                                                        <label>Nome do Kit</label>
+                                                        <label><strong>Nome do Kit</strong></label>
                                                     </div>
                                                     <div class="listdosbrindes">
                                                         <div class="scrooldalistbrinde">
@@ -222,7 +217,7 @@
 
                                         <div class="botoes-criar-list">
                                             <div id="voltark-list">
-                                                <button onclick="voltarkit('.modal_add_item_3')">Voltar</button>
+                                                <button onclick="voltarkit()">Voltar</button>
                                             </div>
                                             <div id="salvark-list">
                                                 <button onclick="salvarkit('.modal_criar_list')">Salvar</button>
