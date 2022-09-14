@@ -3,18 +3,29 @@
 <?php
 
 //Pegar o arquivo de conexão com o banco
-include("./raiz/conection.php");
+include("../conection.php");
 
-//variavel para incluir valores aos campos
-if (isset($_POST['nomeKit']) && isset($_POST['descricaoKit'])){
-    $nomedokit = mysqli_real_escape_string($con,$_POST['nomeKit']);
-    $brindedokit = mysqli_real_escape_string($con, $_POST['brindeKit']);
-    $descricaodokit = mysqli_real_escape_string($con, $_POST['descricaoKit']);
+$nomeKit = ($_POST['nomeKit']); //variavel criada para pegar o dado do input e registrar no banco de dados, pelo metodo POST
+$descricaoKit = ($_POST['descricaoKit']);
+//$qtddKit = ($_POST['qtddKit']); //quantidade de lit, fazer inner join com tabela de itens_kit
+
+$query = "insert into kits values (null, '{$nomeKit}', '{$descricaoKit}', 10);"; //registra no banco de dados, os dados inseridos pelo input
+$result = $con->query($query); //insere no banco de dados
+
+if ($result == ''){
+    ?>
+        <script> alert('Cadastro não efetuado');</script>
+        <meta http-equiv="refresh" content="1, url=../../indexk.php">
+    <?php
+    exit();
 }
-$query = "INSERT INTO kits (id_kits, nome_kit, descricao, fk_kt_usuario) value (null, 'Kit de Boas Vindas', 'Integração de colaborador novo na empresa', 5)";
-
-$result = mysqli_query($con, $query); 
-
+else{
+    ?>
+        <script> alert('Cadastro efetuado com sucesso');</script>
+        <meta http-equiv="refresh" content="1, url=../../indexk.php">
+    <?php
+    exit();
+}
 
 
 
