@@ -319,7 +319,7 @@ thead {
 /*MODAL--------------------------------------------------------*/
 
 /*fundo escuro*/
-.modal_criar_list, .modal_inativar_item, .modal_saida_kit, .modal_saida_msg, .modal_editar{
+.modal_inativar_item, .modal_saida_kit, .modal_saida_msg, .modal_editar{
     background: rgba(0, 0, 0, 0.3);
     position: fixed;
     top: 0;
@@ -330,7 +330,7 @@ thead {
     justify-content: center;
     align-items: center;
 }
-.modal_content_criar_lits, .modal_content_criar, .modal_content_criar_lits, .modal_content_inativar, .modal_content_saida, .modal_content_saida_msg, .modal_content_editar{
+.modal_content_criar, .modal_content_criar_lits, .modal_content_inativar, .modal_content_saida, .modal_content_saida_msg, .modal_content_editar{
     background: white;
     width: auto;
     max-width: 768px;
@@ -404,54 +404,44 @@ thead {
     flex-direction: column;
     justify-content: center;
     font-family: 'Montserrat', sans-serif;
-    margin-bottom: 2%;
+    background: white;
+    margin-top: 1%;
 }
-.body_modal fieldset{
-    border: 2px solid var(--roxo);
-    border-radius: 5px;
-    justify-content: center;
-}
-.body_modal legend{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-    margin-left: 10px;
-    width: 87px;
-}
-.nome-e-qtdd{
-    display: flex;
-    justify-content: space-between;
-}
-.nome-kit, .qtdd-kit{
+.nome-kit{
     background: var(--cinza-input);
     border-radius: 5px;
     margin-bottom: 1%;
     padding: 5px;
     height: 30px;
 }
-.nome-kit{
-    width: 74%;
-}
-.qtdd-kit input{
-    width: 45px;
-    color: var(--roxo);
-}
 .body_modal label{
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
 }
 .body_modal input{
-    border: 0px solid transparent;
+    border: transparent;
     border-radius: 6px;
     outline: transparent;
     padding: 5px;
     background: none;
     font-size: 18px;
+    width: 625px;
 }
-.body_modal .descricao-k{
-    background: white;
-    margin-top: 1%;
+.descricao-k{
+    margin-bottom: 3%;
 }
-.body_modal textarea{
+.descricao-k fieldset{
+    border: 2px solid var(--roxo);
+    border-radius: 5px;
+    justify-content: center;
+}
+.descricao-k legend{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    margin-left: 10px;
+    width: 87px;
+}
+.descricao-k textarea{
     border: none;
     outline: none;
     background: none;
@@ -463,7 +453,7 @@ thead {
 /*ADICIONANDO ITEM no KIT-----------------------------------------*/
 
 /*base do modal, para dimensões fixas*/
-.modal_criar{
+.modal_criar, .modal_criar_list{
     background: rgba(0, 0, 0, 0.3);
     position: fixed;
     top: 0;
@@ -482,6 +472,14 @@ thead {
     border-radius: 5px;
     border: 2px solid var(--roxo);
 }
+.modal_content_criar_lits{
+    background: white;
+    width: 600px;
+    height: 350px;
+    padding: 1%;
+    border-radius: 5px;
+    border: 2px solid var(--roxo);
+}
 /*area de visualização do item (brinde)*/
 .item-brinde{
     border-radius: 5px;
@@ -493,20 +491,38 @@ thead {
     background: var(--cinza-input);
     border-radius: 6px;
     padding-left: 5px;
-    margin-bottom: 2%;
+    margin-bottom: 1%;
     display: flex;
     align-items: center;
     width: 360px;
-    height: 35px;
 }
-.fundo-cinza-k input{
-    width: 73%;
+.brindes-kit{
+    background: var(--cinza-input);
+    border-radius: 5px;
+    margin-bottom: 1%;
+    padding: 5px;
+    height: 30px;
+    width: 90%;
+}
+.brindes-kit label{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+}
+.brindes-kit input{
+    border: transparent;
+    border-radius: 6px;
+    outline: transparent;
+    padding: 5px;
+    background: none;
+    font-size: 18px;
+    width: 237px;
 }
 .quantidade-brinde{
-    display: flex;
+    padding: 5px;
 }
-.quantidade-brinde input{
-    width: 45px;
+.quantidade-brinde label{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
     color: var(--roxo);
 }
 
@@ -605,17 +621,32 @@ thead {
     justify-content: center;
     font-family: 'Montserrat', sans-serif;
 }
-.nomedokit-montado{
-    border: 1px solid var(--cinza-input);
-    border-radius: 6px;
+.nomekitmontado{
     background: var(--cinza-input);
+    border-radius: 5px;
     padding: 5px;
     height: 30px;
+    margin-bottom: 1%;
+    display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+}
+.nomekitmontado label{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+}
+.nomekitmontado input{
+    border: transparent;
+    border-radius: 6px;
+    outline: transparent;
+    padding: 5px;
+    background: none;
+    font-size: 18px;
+    width: 50px;
+    color: var(--roxo);
 }
 .itembrinde-list{
-    margin: 1%;
+    /* margin: 1%; */
     border: 1px solid var(--cinza-input);
     border-radius: 5px;
     background: var(--cinza-input);

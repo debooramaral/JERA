@@ -47,7 +47,6 @@ function abrirCriarkit()
         closePr.style.display = 'none';
         modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
-    
 }
  
 //-----------------------------------------BOTÃO CANCELAR KIT
@@ -242,7 +241,7 @@ function adicionaritem(){
                 <option value=""></option>
             </datalist>
             <div class="quantidade-brinde">
-                <label>01</label>
+                <label for="">01</label>
             </div>
         </div>
     </div>

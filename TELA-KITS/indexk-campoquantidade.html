@@ -127,9 +127,11 @@
 
                                         <!--body modal-->
                                         <div class="body_modal">
-                                            <!-- <form action="" id="formcriar"> -->
-                                                <div class="nome-kit"><label for="">Nome do Kit:</label><input type="text"></div>
-                                                
+                                            <form action="" id="formcriar">
+                                                <div class="nome-e-qtdd">
+                                                    <div class="nome-kit"><label for="">Nome do Kit:</label><input type="text"></div>
+                                                    <div class="qtdd-kit"><label for="">Quantidade:</label><input type="number"></div>
+                                                </div>
                                                 <div class="item-brinde">
                                                     <form action="">
                                                         <div class="scrolllist">
@@ -144,7 +146,7 @@
                                                                             <option value=""></option>
                                                                         </datalist>
                                                                         <div class="quantidade-brinde">
-                                                                            <label for="">01</label>
+                                                                            <input type="number" name="qtdd-brinde">
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -156,14 +158,14 @@
                                                         <button onclick="adicionaritem()">Adicionar</button>
                                                     </div>
                                                 </div>
-                                                
                                                 <div class="descricao-k">
                                                     <fieldset>
                                                         <legend>Descrição:</legend>
-                                                        <textarea name="" id="" cols="40" rows="5" style="resize: none;"></textarea>
+                                                        <textarea name="" id="" cols="40" rows="5"
+                                                            style="resize: none;"></textarea>
                                                     </fieldset>
                                                 </div>
-                                            <!-- </form> -->
+                                            </form>
                                         </div>
 
                                         <!--botoes modal-->
@@ -196,15 +198,9 @@
                                             
                                             <div class="kit-montado">
                                                 <div class="scrooldavisualizacaokit">
-                                                    <div class="nomekitmontado">
-                                                        <div class="nomekit">
-                                                            <label>Nome do Kit:</label>
-                                                        </div>
-                                                        <div class="quantidadekit">
-                                                            <label for="">Quantidade:</label><input type="number">
-                                                        </div>
+                                                    <div class="nomedokit-montado">
+                                                        <label>Nome do Kit</label>
                                                     </div>
-
                                                     <div class="listdosbrindes">
                                                         <div class="scrooldalistbrinde">
                                                             <div class="itembrinde-list">
@@ -213,7 +209,6 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    
                                                     <div class="descricaodokit">
                                                         <fieldset>
                                                             <legend>Descrição:</legend>
